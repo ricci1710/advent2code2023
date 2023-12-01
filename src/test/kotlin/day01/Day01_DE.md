@@ -1,53 +1,33 @@
-**--- Day 1: Inverse Captcha ---**
+**--- Tag 1: Trebuchet? ---**
 
-The night before Christmas, one of Santa's Elves calls you in a panic. "The printer's broken! We can't print the Naughty or Nice List!" By the time you make it
-to sub-basement 17, there are only a few minutes until midnight. "We have a big problem," she says; "there must be almost fifty bugs in this system, but nothing
-else can print The List. Stand in this square, quick! There's no time to explain; if you can convince them to pay you in stars, you'll be able to--" She pulls a
-lever and the world goes blurry.
+Irgendetwas stimmt mit der weltweiten Schneeproduktion nicht, und du wurdest ausgewählt, um dir das anzusehen. Die Elfen haben dir sogar eine Karte gegeben,
+auf der sie mit Sternen die fünfzig Orte markiert haben, an denen es wahrscheinlich Probleme gibt.
 
-When your eyes can focus again, everything seems a lot more pixelated than before. She must have sent you inside the computer! You check the system clock: 25
-milliseconds until midnight. With that much time, you should be able to collect all fifty stars by December 25th.
+Du machst das schon lange genug, um zu wissen, dass du bis zum 25. Dezember alle fünfzig Sterne überprüfen musst, um den Schneebetrieb wiederherzustellen.
 
-Collect stars by solving puzzles. Two puzzles will be made available on each day millisecond in the Advent calendar; the second puzzle is unlocked when you
-complete the first. Each puzzle grants one star. Good luck!
+Sammeln Sie Sterne durch das Lösen von Rätseln. An jedem Tag des Adventskalenders werden zwei Rätsel zur Verfügung gestellt; das zweite Rätsel wird 
+freigeschaltet, wenn Sie das erste Rätsel lösen. Für jedes Rätsel gibt es einen Stern. Viel Glück!
 
-You're standing in a room with "digitization quarantine" written in LEDs along one wall. The only door is locked, but it includes a small interface. "Restricted
-Area - Strictly No Digitized Users Allowed."
+Du versuchst zu fragen, warum sie nicht einfach eine Wettermaschine benutzen können ("nicht stark genug") und wo sie dich überhaupt hinschicken 
+("in den Himmel") und warum deine Karte größtenteils leer aussieht ("du stellst ganz schön viele Fragen") und warte mal, hast du gerade Himmel 
+gesagt ("natürlich, was glaubst du denn, wo der Schnee herkommt"), als du merkst, dass die Elfen dich bereits in ein Trebuchet laden
+("bitte halt still, wir müssen dich anschnallen").
 
-It goes on to explain that you may only leave by solving a captcha to prove you're not a human. Apparently, you only get one millisecond to solve the captcha:
-too fast for a normal human, but it feels like hours to you.
+Während sie die letzten Anpassungen vornehmen, stellen sie fest, dass ihr Kalibrierungsdokument (Ihre Rätseleingabe) von einer sehr jungen Elfe geändert wurde, 
+die offenbar nur ihre künstlerischen Fähigkeiten zeigen wollte. Daher haben die Elfen Schwierigkeiten, die Werte auf dem Dokument zu lesen.
 
-The captcha requires you to review a sequence of digits (your puzzle input) and find the sum of all digits that match the next digit in the list. **The list is
-circular, so the digit after the last digit is the first digit in the list**.
-
-```
-For example:
-
-1122 produces a sum of 3 (1 + 2) because the first digit (1) matches the second digit and the third digit (2) matches the fourth digit.
-1111 produces 4 because each digit (all 1) matches the next.
-1234 produces 0 because no digit matches the next.
-91212129 produces 9 because the only digit that matches the next one is the last digit, 9.
-```
-
-What is the solution to your captcha?
-
-**--- Teil 2 ---**
-
-Du bemerkst einen Fortschrittsbalken, der auf 50% Fertigstellung springt. Offenbar ist die Tür noch nicht zufrieden, aber sie hat einen Stern als Ermutigung
-abgegeben. Die Anweisungen ändern sich:
-
-Anstatt die nächste Ziffer zu berücksichtigen, sollen Sie nun die Ziffer in der Mitte der kreisförmigen Liste berücksichtigen. Das heißt, wenn Ihre Liste 10
-Elemente enthält, nehmen Sie eine Ziffer nur dann in Ihre Summe auf, wenn die Ziffer 10/2 = 5 Schritte weiter mit ihr übereinstimmt. Glücklicherweise hat Ihre
-Liste eine gerade Anzahl von Elementen.
-
+Das neu verbesserte Kalibrierungsdokument besteht aus Textzeilen; jede Zeile enthielt ursprünglich einen bestimmten Kalibrierungswert, den die Elfen nun
+wiederherstellen müssen. In jeder Zeile kann der Kalibrierungswert gefunden werden, indem die erste Ziffer und die letzte Ziffer (in dieser Reihenfolge)
+zu einer einzigen zweistelligen Zahl kombiniert werden.
 ```
 Zum Beispiel:
 
-1212 ergibt 6: Die Liste enthält 4 Elemente, und alle vier Ziffern stimmen mit der Ziffer 2 Elemente weiter vorne überein.
-1221 ergibt 0, weil jeder Vergleich zwischen einer 1 und einer 2 stattfindet.
-123425 ergibt 4, weil beide 2en übereinstimmen, aber keine andere Ziffer eine Übereinstimmung hat.
-123123 ergibt 12.
-12131415 ergibt 4.
+1abc2
+pqr3stu8vwx
+a1b2c3d4e5f
+treb7uchet
+
+In diesem Beispiel sind die Kalibrierungswerte dieser vier Zeilen 12, 38, 15 und 77. Die Addition dieser Werte ergibt 142.
 ```
 
-Wie lautet die Lösung für Ihr neues Captcha?
+Betrachten Sie Ihr gesamtes Kalibrierungsdokument. Wie hoch ist die Summe aller Kalibrierungswerte?
