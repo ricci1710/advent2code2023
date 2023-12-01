@@ -5,20 +5,13 @@ import base.Day
 class Day01(dayNumber: Int, loadDemoData: Boolean) : Day(dayNumber, loadDemoData) {
   private fun calcCalibration(calcCalibration: List<String>): Int {
     var calibrationCode = 0
-    calcCalibration.forEach { line ->
-      val lineCode = findCalibrationCode(line)
-      println(lineCode)
-      calibrationCode += lineCode
-    }
+    calcCalibration.forEach { line -> calibrationCode += findCalibrationCode(line) }
     return calibrationCode
   }
 
   private fun calcCalibrationVersion2(calcCalibration: List<String>): Int {
     var calibrationCode = 0
-    calcCalibration.forEach { line ->
-      val lineCode = findCalibrationCodeVersion2(line)
-      calibrationCode += lineCode
-    }
+    calcCalibration.forEach { line -> calibrationCode += findCalibrationCodeVersion2(line) }
     return calibrationCode
   }
 
@@ -27,10 +20,7 @@ class Day01(dayNumber: Int, loadDemoData: Boolean) : Day(dayNumber, loadDemoData
       .toList()
       .filter { char -> char.isDigit() }
 
-    if (lineNumbers.isEmpty())
-      return 0
-    else
-      return (lineNumbers.first().toString() + lineNumbers.last().toString()).toInt()
+    return if (lineNumbers.isEmpty()) 0 else (lineNumbers.first().toString() + lineNumbers.last().toString()).toInt()
   }
 
   /**
@@ -44,7 +34,7 @@ class Day01(dayNumber: Int, loadDemoData: Boolean) : Day(dayNumber, loadDemoData
       .toList()
 
     // all digits from string
-    val digitNumbers = Regex("1|2|3|4|5|6|7|8|9").findAll(line)
+    val digitNumbers = Regex("[1-9]").findAll(line)
       .map(MatchResult::value)
       .toList()
 
