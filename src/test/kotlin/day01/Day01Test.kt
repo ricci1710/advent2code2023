@@ -7,17 +7,17 @@ class Day01Test {
   private val demoDay = Day01(1, true)
   private val lifeDay = Day01(1, false)
 
-//  @Test
-//  fun `calculate solution for part one`() {
-//    var expected = 209 // demo data from part 2
-//    var actual = demoDay.calcPartOne()
-//    Assertions.assertEquals(expected, actual)
-//
-//    // Life-Data
-//    expected = 55477
-//    actual = lifeDay.calcPartOne()
-//    Assertions.assertEquals(expected, actual)
-//  }
+  @Test
+  fun `calculate solution for part one`() {
+    var expected = 209 // demo data from part 2
+    var actual = demoDay.calcPartOne()
+    Assertions.assertEquals(expected, actual)
+
+    // Life-Data
+    expected = 55477
+    actual = lifeDay.calcPartOne()
+    Assertions.assertEquals(expected, actual)
+  }
 
   /**
    * Spelled out with letters: one, two, three, four, five, six, seven, eight, and nine also count as valid "digits".
