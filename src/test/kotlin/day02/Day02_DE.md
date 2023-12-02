@@ -1,57 +1,43 @@
-**--- Tag 1: Trebuchet? ---**
+**--- Tag 2: Würfel-Rätsel ---**
 
-Irgendetwas stimmt mit der weltweiten Schneeproduktion nicht, und du wurdest ausgewählt, um dir das anzusehen. Die Elfen haben dir sogar eine Karte gegeben,
-auf der sie mit Sternen die fünfzig Orte markiert haben, an denen es wahrscheinlich Probleme gibt.
+Du wirst hoch in die Atmosphäre geschossen! Der Scheitelpunkt deiner Flugbahn erreicht gerade noch die Oberfläche einer großen Insel, 
+die im Himmel schwebt. Du landest sanft in einem flauschigen Blätterhaufen. Es ist ziemlich kalt, aber du siehst nicht viel Schnee. 
+Ein Elf kommt herbeigelaufen, um dich zu begrüßen.
 
-Du machst das schon lange genug, um zu wissen, dass du bis zum 25. Dezember alle fünfzig Sterne überprüfen musst, um den Schneebetrieb wiederherzustellen.
+Der Elf erklärt dir, dass du auf der Schneeinsel angekommen bist, und entschuldigt sich für den fehlenden Schnee. Er erklärt dir gerne 
+die Situation, aber es ist ein kleiner Spaziergang, also hast du noch etwas Zeit. Sie bekommen nicht viele Besucher hier oben; möchtest 
+du in der Zwischenzeit ein Spiel spielen?
 
-Sammeln Sie Sterne durch das Lösen von Rätseln. An jedem Tag des Adventskalenders werden zwei Rätsel zur Verfügung gestellt; das zweite Rätsel wird
-freigeschaltet, wenn Sie das erste Rätsel lösen. Für jedes Rätsel gibt es einen Stern. Viel Glück!
+Während ihr geht, zeigt euch der Elf einen kleinen Beutel und einige Würfel, die entweder rot, grün oder blau sind. Jedes Mal, wenn du 
+dieses Spiel spielst, wird er eine geheime Anzahl von Würfeln jeder Farbe in dem Beutel verstecken, und dein Ziel ist es, Informationen
+über die Anzahl der Würfel herauszufinden.
 
-Du versuchst zu fragen, warum sie nicht einfach eine Wettermaschine benutzen können ("nicht stark genug") und wo sie dich überhaupt hinschicken
-("in den Himmel") und warum deine Karte größtenteils leer aussieht ("du stellst ganz schön viele Fragen") und warte mal, hast du gerade Himmel
-gesagt ("natürlich, was glaubst du denn, wo der Schnee herkommt"), als du merkst, dass die Elfen dich bereits in ein Trebuchet laden
-("bitte halt still, wir müssen dich anschnallen").
+Um an die Informationen zu gelangen, greift der Elf in den Beutel, nimmt eine Handvoll zufälliger Würfel, zeigt sie dir und legt sie wieder 
+in den Beutel zurück. Das macht er ein paar Mal pro Spiel.
 
-Während sie die letzten Anpassungen vornehmen, stellen sie fest, dass ihr Kalibrierungsdokument (Ihre Rätseleingabe) von einer sehr jungen Elfe geändert wurde,
-die offenbar nur ihre künstlerischen Fähigkeiten zeigen wollte. Daher haben die Elfen Schwierigkeiten, die Werte auf dem Dokument zu lesen.
-
-Das neu verbesserte Kalibrierungsdokument besteht aus Textzeilen; jede Zeile enthielt ursprünglich einen bestimmten Kalibrierungswert, den die Elfen nun
-wiederherstellen müssen. In jeder Zeile kann der Kalibrierungswert gefunden werden, indem die erste Ziffer und die letzte Ziffer (in dieser Reihenfolge)
-zu einer einzigen zweistelligen Zahl kombiniert werden.
-
+Du spielst mehrere Spiele und notierst die Informationen aus jedem Spiel (deinen Rätseleinsatz). Jedes Spiel wird mit seiner ID-Nummer 
+aufgelistet (z. B. die 11 in Spiel 11: ...), gefolgt von einer durch Semikolon getrennten Liste von Teilmengen von Würfeln, die aus dem 
+Beutel aufgedeckt wurden (z. B. 3 rote, 5 grüne, 4 blaue).
 ```
-Zum Beispiel:
+Die Aufzeichnung einiger Spiele könnte zum Beispiel so aussehen:
 
-1abc2
-pqr3stu8vwx
-a1b2c3d4e5f
-treb7uchet
-
-In diesem Beispiel sind die Kalibrierungswerte dieser vier Zeilen 12, 38, 15 und 77. Die Addition dieser Werte ergibt 142.
+Spiel 1: 3 blau, 4 rot; 1 rot, 2 grün, 6 blau; 2 grün
+Spiel 2: 1 blau, 2 grün; 3 grün, 4 blau, 1 rot; 1 grün, 1 blau
+Spiel 3: 8 grün, 6 blau, 20 rot; 5 blau, 4 rot, 13 grün; 5 grün, 1 rot
+Spiel 4: 1 grün, 3 rot, 6 blau; 3 grün, 6 rot; 3 grün, 15 blau, 14 rot
+Spiel 5: 6 rot, 1 blau, 3 grün; 2 blau, 1 rot, 2 grün
 ```
 
-Betrachten Sie Ihr gesamtes Kalibrierungsdokument. Wie hoch ist die Summe aller Kalibrierungswerte?
+In Spiel 1 werden drei Sätze von Würfeln aus dem Beutel aufgedeckt (und dann wieder zurückgelegt). 
+Der erste Satz besteht aus 3 blauen und 4 roten Würfeln; der zweite Satz aus 1 roten, 2 grünen und 6 blauen Würfeln; der dritte Satz besteht
+nur aus 2 grünen Würfeln.
 
-**--- Zweiter Teil ---**
+Die Elfe möchte zunächst wissen, welche Spiele möglich gewesen wären, wenn der Beutel nur 12 rote, 13 grüne und 14 blaue Würfel enthalten hätte?
 
-Deine Berechnung ist nicht ganz richtig. Es sieht so aus, als ob einige der Ziffern tatsächlich mit Buchstaben geschrieben werden: eins, zwei, drei, vier,
-fünf, sechs, sieben, acht und neun zählen auch als gültige "Ziffern".
+Im obigen Beispiel wären die Spiele 1, 2 und 5 möglich gewesen, wenn der Beutel mit dieser Konfiguration beladen worden wäre. Spiel 3 wäre jedoch 
+unmöglich gewesen, weil die Elfe dir an einer Stelle 20 rote Würfel auf einmal gezeigt hat; ebenso wäre Spiel 4 unmöglich gewesen, weil die Elfe
+dir 15 blaue Würfel auf einmal gezeigt hat. Zählt man die IDs der Spiele zusammen, die möglich gewesen wären, erhält man 8.
 
-Mit diesen neuen Informationen müssen Sie nun die richtige erste und letzte Ziffer in jeder Zeile finden.
+Bestimme, welche Spiele möglich gewesen wären, wenn der Beutel nur mit 12 roten, 13 grünen und 14 blauen Würfeln beladen gewesen wäre.
+Was ist die Summe der IDs dieser Spiele?
 
-```
-Zum Beispiel:
-
-zwei1neun
-achtdrei
-abcone2dreixyz
-xtwone3four
-4nineeightseven2
-zoneight234
-7pqrstssechszehn
-
-In diesem Beispiel sind die Kalibrierungswerte 29, 83, 13, 24, 42, 14 und 76. Die Addition dieser Werte ergibt 281.
-```
-
-Wie hoch ist die Summe aller Kalibrierungswerte?
