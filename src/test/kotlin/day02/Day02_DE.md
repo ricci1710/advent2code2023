@@ -41,3 +41,33 @@ dir 15 blaue Würfel auf einmal gezeigt hat. Zählt man die IDs der Spiele zusam
 Bestimme, welche Spiele möglich gewesen wären, wenn der Beutel nur mit 12 roten, 13 grünen und 14 blauen Würfeln beladen gewesen wäre.
 Was ist die Summe der IDs dieser Spiele?
 
+**--- Zweiter Teil ---**
+
+Der Elf sagt, dass sie aufgehört haben, Schnee zu produzieren, weil sie kein Wasser mehr bekommen! Er ist sich nicht sicher, warum das Wasser aufgehört hat,
+aber er kann dir zeigen, wie du zu der Wasserquelle kommst, um es selbst zu überprüfen. Sie ist gleich da vorne!
+
+Während ihr euren Spaziergang fortsetzt, stellt euch die Elfe eine zweite Frage: Wie viele Würfel jeder Farbe waren bei jedem Spiel, das ihr gespielt habt, 
+am wenigsten im Beutel, um das Spiel zu ermöglichen?
+
+Denkt wieder an die Beispielspiele von vorhin:
+```
+Spiel 1: 3 blau, 4 rot; 1 rot, 2 grün, 6 blau; 2 grün
+Spiel 2: 1 blau, 2 grün; 3 grün, 4 blau, 1 rot; 1 grün, 1 blau
+Spiel 3: 8 grün, 6 blau, 20 rot; 5 blau, 4 rot, 13 grün; 5 grün, 1 rot
+Spiel 4: 1 grün, 3 rot, 6 blau; 3 grün, 6 rot; 3 grün, 15 blau, 14 rot
+Spiel 5: 6 rot, 1 blau, 3 grün; 2 blau, 1 rot, 2 grün
+```
+
+- In Spiel 1 hätte das Spiel mit nur 4 roten, 2 grünen und 6 blauen Würfeln gespielt werden können. Hätte eine Farbe auch nur einen Würfel weniger gehabt, 
+  wäre das Spiel unmöglich gewesen.
+- Spiel 2 hätte mit einem Minimum von 1 roten, 3 grünen und 4 blauen Würfeln gespielt werden können.
+- Spiel 3 muss mit mindestens 20 roten, 13 grünen und 6 blauen Würfeln gespielt worden sein.
+- Spiel 4 musste mit mindestens 14 roten, 3 grünen und 15 blauen Würfeln gespielt werden.
+- Für Spiel 5 mussten mindestens 6 rote, 3 grüne und 2 blaue Würfel im Beutel sein.
+
+Die **Potenz** einer Menge von Würfeln ist gleich der Anzahl der roten, grünen und blauen Würfel, die miteinander multipliziert werden.
+Die Potenz der kleinsten Würfelmenge in Spiel 1 ist 48. In den Spielen 2-5 waren es 12, 1560, 630 bzw. 36. Addiert man diese fünf Potenzen, erhält 
+man die Summe 2286.
+
+Ermitteln Sie für jedes Spiel die Mindestmenge an Würfeln, die vorhanden gewesen sein muss. 
+**Was ist die Summe der Potenzen dieser Mengen?**

@@ -14,7 +14,7 @@ class Day02Test {
     Assertions.assertEquals(expectedDemo, actualDemo)
 
     // Life-Data
-    val expectedLife = 255
+    val expectedLife = 2006
     val actualLife = lifeDay.calcPartOne()
     Assertions.assertEquals(expectedLife, actualLife)
   }
@@ -24,12 +24,12 @@ class Day02Test {
    */
   @Test
   fun `calculate solution for part two`() {
-    var expected = 0
-    var actual = demoDay.calcPartTwo()
-    Assertions.assertEquals(expected, actual)
+    val expectedDemo = 2286
+    val actualDemo = demoDay.calcPartTwo()
+    Assertions.assertEquals(expectedDemo, actualDemo)
 
-    expected = 0
-    actual = lifeDay.calcPartTwo()
-    Assertions.assertEquals(expected, actual)
+    val expectedLife = 84911
+    val actualLife = lifeDay.calcPartTwo()
+    Assertions.assertEquals(expectedLife, actualLife)
   }
 }
