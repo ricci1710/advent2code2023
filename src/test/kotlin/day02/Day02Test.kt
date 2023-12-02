@@ -4,19 +4,19 @@ import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
 
 class Day02Test {
-  private val demoDay = Day02(2, true)
-  private val lifeDay = Day02(2, false)
+  private val demoDay = Day02(2, true, PlayData(12, 13, 14))
+  private val lifeDay = Day02(2, false, PlayData(12, 13, 14))
 
   @Test
   fun `calculate solution for part one`() {
-    var expected = 0 // demo data from part 2
-    var actual = demoDay.calcPartOne()
-    Assertions.assertEquals(expected, actual)
+    val expectedDemo = 8 // demo data from part 2
+    val actualDemo = demoDay.calcPartOne()
+    Assertions.assertEquals(expectedDemo, actualDemo)
 
     // Life-Data
-    expected = 0
-    actual = lifeDay.calcPartOne()
-    Assertions.assertEquals(expected, actual)
+    val expectedLife = 255
+    val actualLife = lifeDay.calcPartOne()
+    Assertions.assertEquals(expectedLife, actualLife)
   }
 
   /**
