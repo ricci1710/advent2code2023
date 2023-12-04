@@ -14,7 +14,7 @@ class Day03Test {
     Assertions.assertEquals(expectedDemo, actualDemo)
 
     // Life-Data
-    val expectedLife = 0
+    val expectedLife = 546563
     val actualLife = lifeDay.calcPartOne()
     Assertions.assertEquals(expectedLife, actualLife)
   }

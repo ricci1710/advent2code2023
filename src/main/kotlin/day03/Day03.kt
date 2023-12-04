@@ -5,15 +5,16 @@ import base.Day
 class Day03(dayNumber: Int, loadDemoData: Boolean) : Day(dayNumber, loadDemoData) {
   private fun calc(): Int {
     var lineIndex = 0
+    var result = 0
 
     storeData.forEach { line ->
-      check(lineIndex, line)
+      result += calculateLine(lineIndex, line)
       lineIndex += 1
     }
-    return 0
+    return result
   }
 
-  private fun check(lineIndex: Int, line: String): Int {
+  private fun calculateLine(lineIndex: Int, line: String): Int {
     val prevIdx = lineIndex - 1
     val nextIdx = lineIndex + 1
 
@@ -34,25 +35,42 @@ class Day03(dayNumber: Int, loadDemoData: Boolean) : Day(dayNumber, loadDemoData
       ok = ok || item?.let { checkPrevOrNextLine(it, nextLine) } == true
 
       if (ok)
-        result = item?.value?.toInt() ?: 0
+        result += item?.value?.toInt() ?: 0
     }
 
     return result
   }
 
-  fun checkPrevOrNextLine(matchGroup: MatchGroup, prevLine: String): Boolean {
-    if (prevLine.isEmpty())
+  fun checkPrevOrNextLine(matchGroup: MatchGroup, line: String): Boolean {
+    if (line.isEmpty())
       return false
 
     val startPos = if (matchGroup.range.first > 0) matchGroup.range.first - 1 else matchGroup.range.first
-    val endPos = if (matchGroup.range.last < prevLine.length - 1) matchGroup.range.last + 1 else matchGroup.range.last
+    val endPos = if (matchGroup.range.last < line.length - 1) matchGroup.range.last + 1 else matchGroup.range.last
 
-    println("$prevLine: $startPos - $endPos")
-    return true
+    val subLine = line.subSequence(startPos, endPos + 1)
+      .toList()
+      .filter { it != '.' }
+
+    return subLine.isNotEmpty()
   }
 
-  private fun checkCurrLine(matchGroup: MatchGroup, prevLine: String): Boolean {
-    return true
+  private fun checkCurrLine(matchGroup: MatchGroup, line: String): Boolean {
+    if (line.isEmpty())
+      return false
+
+    val startPos = if (matchGroup.range.first > 0) matchGroup.range.first - 1 else matchGroup.range.first
+    val endPos = if (matchGroup.range.last < line.length - 1) matchGroup.range.last + 1 else matchGroup.range.last
+
+    val subLine = line.subSequence(startPos, endPos + 1)
+    var charStart = subLine[0]
+    var charEnd = subLine[subLine.length - 1]
+
+    return isSymbol(charStart) || isSymbol(charEnd)
+  }
+
+  fun isSymbol(char: Char): Boolean {
+    return !char.isDigit() && char != '.'
   }
 
   /**
