@@ -8,11 +8,14 @@ class Day03Test {
   private val lifeDay = Day03(3, false)
 
   @Test
-  fun `calculate solution for part one`() {
+  fun `calculate solution for demo data part one`() {
     val expectedDemo = 4361 // demo data from part 2
     val actualDemo = demoDay.calcPartOne()
     Assertions.assertEquals(expectedDemo, actualDemo)
+  }
 
+  @Test
+  fun `calculate solution for life data part one`() {
     // Life-Data
     val expectedLife = 546563
     val actualLife = lifeDay.calcPartOne()
