@@ -48,3 +48,43 @@ jedes der drei Spiele nach dem ersten).
 In diesem Beispiel ist der Stapel Rubbellose der Elfe also 13 Punkte wert.
 
 Setzen Sie sich auf den großen Stapel bunter Karten. Wie viele Punkte sind sie insgesamt wert?
+
+**--- Zweiter Teil ---**
+
+Gerade als ihr dem Elfen von euren Erkenntnissen berichten wollt, fällt einem von euch auf, dass die Regeln eigentlich schon die ganze Zeit auf der
+Rückseite jeder Karte aufgedruckt waren.
+
+So etwas wie "Punkte" gibt es nicht. Stattdessen kannst du mit Rubbellosen nur so viele Rubbellose gewinnen, wie du Gewinnzahlen hast.
+
+Genauer gesagt, gewinnen Sie Kopien der Rubbellose unter dem Gewinnlos, die der Anzahl der Übereinstimmungen entsprechen. Wenn also Karte 10 5
+übereinstimmende Zahlen hätte, würden Sie jeweils ein Exemplar der Karten 11, 12, 13, 14 und 15 gewinnen.
+
+Kopien von Rubbellosen werden wie normale Rubbellose gewertet und haben dieselbe Kartennummer wie die Karte, die sie kopiert haben. Wenn du also 
+eine Kopie von Karte 10 gewinnst und diese 5 übereinstimmende Zahlen hat, würde sie eine Kopie derselben Karten gewinnen, die die Originalkarte
+10 gewonnen hat: die Karten 11, 12, 13, 14 und 15. Dieser Vorgang wiederholt sich so lange, bis Sie mit keiner der Kopien mehr
+Karten gewinnen. (Die Karten werden Sie nie dazu bringen, eine Karte über das Ende des Tisches hinaus zu kopieren).
+
+```
+Dieses Mal läuft das obige Beispiel anders ab:
+
+Karte 1: 41 48 83 86 17 | 83 86 6 31 17 9 48 53
+Karte 2: 13 32 20 16 61 | 61 30 68 82 17 32 24 19
+Karte 3: 1 21 53 59 44 | 69 82 63 72 16 21 14 1
+Karte 4: 41 92 73 84 69 | 59 84 76 51 58 5 54 83
+Karte 5: 87 83 26 28 32 | 88 30 70 12 93 22 82 36
+Karte 6: 31 18 13 56 72 | 74 77 10 23 35 67 36 11
+```
+- Karte 1 hat vier übereinstimmende Zahlen, also gewinnen Sie je ein Exemplar der nächsten vier Karten: Karte 2, 3, 4 und 5.
+- Ihre Originalkarte 2 hat zwei übereinstimmende Zahlen, also gewinnen Sie je ein Exemplar der Karten 3 und 4.
+- Ihre Kopie der Karte 2 gewinnt auch je ein Exemplar der Karten 3 und 4.
+- Ihre vier Exemplare der Karte 3 (ein Original und drei Kopien) haben zwei übereinstimmende Zahlen, also gewinnen Sie je vier Exemplare der Karten 4 und 5.
+- Deine acht Exemplare der Karte 4 (ein Original und sieben Kopien) haben eine übereinstimmende Zahl, also gewinnst du acht Exemplare der Karte 5.
+- Ihre vierzehn Exemplare der Karte 5 (ein Original und dreizehn Kopien) weisen keine übereinstimmenden Zahlen auf und Sie gewinnen keine weiteren Karten.
+- Ihr einziges Exemplar von Karte 6 (ein Original) hat keine übereinstimmenden Zahlen und gewinnt keine weiteren Karten.
+
+Nachdem alle Originale und Kopien bearbeitet wurden, haben Sie 1 Exemplar von Karte 1, 2 Exemplare von Karte 2, 4 Exemplare von Karte 3, 8 Exemplare
+von Karte 4, 14 Exemplare von Karte 5 und 1 Exemplar von Karte 6. Insgesamt hat dieser Beispielstapel von Rubbellosen dazu geführt, dass Sie letztendlich 
+30 Rubbellose haben!
+
+Verarbeiten Sie alle ursprünglichen und kopierten Rubbellose, bis keine Rubbellose mehr gewonnen werden. Wie viele Rubbellose haben Sie insgesamt, 
+einschließlich des ursprünglichen Satzes von Rubbellosen?

@@ -37,7 +37,7 @@ class Day04Test {
   }
 
   @Test
-  fun parse() {
+  fun `Parse a line into its components`() {
     val line = " 93  7  9 11 12 13 79 51 99 62 | 99 28 51 12 82 11 35 18 93 34  7 17  2 13 63 54  9 69 62 84 68 79 58 36 70"
     val regEx = Regex("\\s+")
     val cardStacks = line.split("|")
