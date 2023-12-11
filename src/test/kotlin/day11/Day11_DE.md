@@ -76,9 +76,12 @@ Er kann helfen, jeder Galaxie eine eindeutige Nummer zuzuordnen:
 .........7...
 8....9.......
 ```
-In diesen 9 Galaxien gibt es 36 Paare. Zähle jedes Paar nur einmal; die Reihenfolge innerhalb des Paares spielt keine Rolle. 
-Finde für jedes Paar den kürzesten Weg zwischen den beiden Galaxien, indem du nur Schritte verwendest, die genau einen. oder # nach oben,
-unten, links oder rechts führen. (Der kürzeste Weg zwischen zwei Galaxien darf durch eine andere Galaxie führen.)
+**In diesen 9 Galaxien gibt es 36 Paare.**
+Zähle jedes Paar nur einmal; die Reihenfolge innerhalb des Paares spielt keine Rolle. 
+Finde für jedes Paar den kürzesten Weg zwischen den beiden Galaxien, indem du nur Schritte verwendest, die genau einen.
+oder # nach oben,
+unten, links oder rechts führen.
+(Der kürzeste Weg zwischen zwei Galaxien darf durch eine andere Galaxie führen.)
 
 Hier ist zum Beispiel einer der kürzesten Pfade zwischen den Galaxien 5 und 9:
 ```
