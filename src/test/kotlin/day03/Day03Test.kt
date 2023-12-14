@@ -17,7 +17,7 @@ class Day03Test {
   @Test
   fun `calculate solution for life data part one`() {
     // Life-Data
-    val expectedLife = 546563
+    val expectedLife = 546563 // 484352
     val actualLife = lifeDay.calcPartOne()
     Assertions.assertEquals(expectedLife, actualLife)
   }
@@ -34,7 +34,7 @@ class Day03Test {
 
   @Test
   fun `calculate solution for life data part two`() {
-    val expectedLife = 86192975
+    val expectedLife = 86192975 // 76660451
     val actualLife = lifeDay.calcPartTwo()
     Assertions.assertEquals(expectedLife, actualLife)
   }
@@ -100,6 +100,11 @@ class Day03Test {
 
     number = demoDay.checkCurrentLine(12, ".831*.61..23*4...388")
     Assertions.assertEquals(92, number)
+
+    val range = IntRange(1, 1)
+    val matchGroup = MatchGroup("4", range)
+    val isNotEmpty = demoDay.checkPrevOrNextLine(matchGroup, ".5.")
+    Assertions.assertFalse(isNotEmpty)
   }
 
   @Test
@@ -107,6 +112,43 @@ class Day03Test {
     val lifeDemoDay = Day03(3, false, "a")
 
     var result = lifeDemoDay.calcPartTwo()
-    Assertions.assertEquals(760040, result)
+    Assertions.assertEquals(408, result)
+  }
+
+  @Test
+  fun `test special file LifeData03b`() {
+    val lifeDemoDay = Day03(3, false, "b")
+
+    var result = lifeDemoDay.calcPartTwo()
+    Assertions.assertEquals(408, result)
+  }
+
+  @Test
+  fun `test special file LifeData03c`() {
+    val lifeDemoDay = Day03(3, false, "b")
+
+    var result = lifeDemoDay.calcPartTwo()
+    Assertions.assertEquals(408, result)
+  }
+
+  @Test
+  fun `multiplGearNumbers`() {
+    val lifeDemoDay = Day03(3, false, "a")
+    var result = 0
+
+    val matchResults: MutableMap<Int, MutableList<Int>> = mutableMapOf()
+
+    lifeDemoDay.multiplGearNumbers(3, "", matchResults)
+    Assertions.assertEquals(408, result)
+
+
+//    result = lifeDemoDay.multiplGearNumbers(3, "", ".12.34.", "...*...")
+//    Assertions.assertEquals(408, result)
+//
+//    result = lifeDemoDay.multiplGearNumbers(3, ".12.34.", "...*...", ".......")
+//    Assertions.assertEquals(408, result)
+//
+//    result = lifeDemoDay.multiplGearNumbers(3, ".12.34.", "...*...", ".......")
+//    Assertions.assertEquals(408, result)
   }
 }

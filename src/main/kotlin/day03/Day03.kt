@@ -59,7 +59,7 @@ class Day03(dayNumber: Int, loadDemoData: Boolean, postFix: String = "") : Day(d
 
     val subLine = line.subSequence(position.first, position.second + 1)
       .toList()
-      .filter { it != '.' }
+      .filter { it != '.' && !it.isDigit() }
 
     return subLine.isNotEmpty()
   }
@@ -132,9 +132,9 @@ class Day03(dayNumber: Int, loadDemoData: Boolean, postFix: String = "") : Day(d
 
     matchGroup.forEach {
       val range = it?.range ?: IntRange(-1, -1)
-      if (number1 == 0 && (position - 1 in range)) // Rechts
+      if (number1 == 0 && (position - 1 in range)) // Links
         number1 = it!!.value.toInt()
-      else if (position + 1 in range)              // oder links vom Stern
+      else if (position + 1 in range)              // oder rechts vom Stern
         number2 = it!!.value.toInt()
     }
 
@@ -149,24 +149,27 @@ class Day03(dayNumber: Int, loadDemoData: Boolean, postFix: String = "") : Day(d
     val matchResultsPrev = searchForNumbersInRange(position, rangeFromGear, prevLine)
     val matchResultsNext = searchForNumbersInRange(position, rangeFromGear, nextLine)
 
-    if (matchResultsPrev.isEmpty() || matchResultsNext.isEmpty())
+    val matchResults = matchResultsPrev + matchResultsNext
+
+    if (matchResults.isEmpty())
       return 0;
 
-    val number1 = matchResultsPrev[position]?.value?.toInt() ?: 0
-    val number2 = matchResultsNext[position]?.value?.toInt() ?: 0
 
-    return number1 * number2
+//    val number1 = matchResultsPrev[position]?.value?.toInt() ?: 0
+//    val number2 = matchResultsNext[position]?.value?.toInt() ?: 0
+
+    return 0 // number1 * number2
   }
 
-  private fun searchForNumbersInRange(position: Int, rangeFromGear: IntRange, line: String): MutableMap<Int, MatchGroup> {
+  private fun searchForNumbersInRange(position: Int, rangeFromGear: IntRange, line: String): MutableMap<Int, List<MatchGroup>> {
     val matchGroupPrevLine = getMatchGroup(line)
-    val matchResults: MutableMap<Int, MatchGroup> = mutableMapOf()
+    val matchResults: MutableMap<Int, List<MatchGroup>> = mutableMapOf()
 
     matchGroupPrevLine.forEach {
       val rangeFromNumber = it?.range!!
       val numberInRange = isInRange(rangeFromNumber, rangeFromGear)
       if (numberInRange)
-        matchResults[position] = it
+        matchResults[position] = listOf(it)
     }
 
     return matchResults
@@ -209,5 +212,73 @@ class Day03(dayNumber: Int, loadDemoData: Boolean, postFix: String = "") : Day(d
 
   fun getNumber(index: Int, matchGroup: List<MatchGroup?>, errorNumber: Int = 0): Int {
     return matchGroup[index]?.value?.toInt() ?: errorNumber
+  }
+
+  fun multiplGearNumbers(gearPosition: Int, line: String, matchResults: MutableMap<Int, MutableList<Int>>) {
+    // Alle Nummern und deren Position in einer Zeile auslesen
+    val matchGroupLine = getMatchGroup(line)
+    if (matchGroupLine.isEmpty())
+      return
+
+    val rangeFromGear = getGearRange(gearPosition, line.length)
+    // MutableMap<GearPosition:Int, MutableList<MatchGroup::Vaule:Int>
+    getCreateMatchedNumbers(gearPosition, rangeFromGear, matchGroupLine, matchResults)
+    println(matchResults)
+
+//    val matchGroupPrevLine = getMatchGroup(prevLine)
+//    val matchGroupLine = getMatchGroup(line)
+//    val matchGroupNextLine = getMatchGroup(nextLine)
+//    val rangeFromGear = getGearRange(gearPosition, line.length)
+//
+//    // MutableMap<GearPosition:Int, MutableList<MatchGroup::Vaule:Int>
+//    val matchResults: MutableMap<Int, MutableList<Int>> = mutableMapOf()
+//    matchGroupPrevLine.forEach {
+//      val value = it!!.value.toInt()
+//      val rangeFromNumber = it!!.range
+//
+//      val numberInRange = isInRange(rangeFromNumber, rangeFromGear)
+//
+//      if (numberInRange) {
+//        if (matchResults.containsKey(gearPosition)) {
+//          val matchNumbers = mutableListOf<Int>(value)
+//          matchResults[gearPosition] = matchNumbers
+//        } else {
+//          val matchNumbers = matchResults[gearPosition]!!
+//          matchNumbers.add(value)
+//        }
+//      }
+
+
+//    }
+  }
+
+  private fun getCreateMatchedNumbers(
+    gearPosition: Int,
+    rangeFromGear: IntRange,
+    matchGroup: List<MatchGroup?>,
+    matchResults: MutableMap<Int, MutableList<Int>>
+  ) {
+    matchGroup.forEach {
+      val value = it!!.value.toInt()
+      val rangeFromNumber = it!!.range
+
+      val numberInRange = isInRange(rangeFromNumber, rangeFromGear)
+
+      if (numberInRange) {
+        if (matchResults.containsKey(gearPosition)) {
+          val matchNumbers = mutableListOf<Int>(value)
+          matchResults[gearPosition] = matchNumbers
+        } else {
+          val matchNumbers = matchResults[gearPosition]!!
+          matchNumbers.add(value)
+        }
+      }
+    }
+  }
+
+  private fun getGearRange(position: Int, lineLength: Int): IntRange {
+    val startPos = if (position > 0) position - 1 else position
+    val endPos = if (position < lineLength - 1) position + 1 else position
+    return (startPos..endPos)
   }
 }
