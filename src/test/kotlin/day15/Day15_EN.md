@@ -1,4 +1,5 @@
---- Day 15: Lens Library ---
+**--- Day 15: Lens Library ---**
+
 The newly-focused parabolic reflector dish is sending all of the collected light to a point on the side of yet another mountain - the largest mountain on Lava
 Island. As you approach the mountain, you find that the light is being collected by the wall of a large facility embedded in the mountainside.
 
@@ -21,8 +22,7 @@ interest.
 The HASH algorithm is a way to turn any string of characters into a single number in the range 0 to 255. To run the HASH algorithm on a string, start with a
 current value of 0. Then, for each character in the string starting from the beginning:
 
-Determine the ASCII code for the current character of the string.
-
+- Determine the ASCII code for the current character of the string.
 - Increase the current value by the ASCII code you just determined.
 - Set the current value to itself multiplied by 17.
 - Set the current value to the remainder of dividing itself by 256.
@@ -56,8 +56,10 @@ the initialization sequence. To verify that your HASH algorithm is working, the 
 the initialization sequence.
 
 For example:
-
+```
 rn=1,cm-,qp=3,cm=2,qp-,pc=4,ot=9,ab=5,pc-,pc=6,ot=7
+```
+
 This initialization sequence specifies 11 individual steps; the result of running the HASH algorithm on each of the steps is as follows:
 
 - rn=1 becomes 30.

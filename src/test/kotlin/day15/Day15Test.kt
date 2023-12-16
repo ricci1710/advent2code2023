@@ -35,4 +35,13 @@ class Day15Test {
     val actualLife = lifeDay.calcPartTwo()
     Assertions.assertEquals(expectedLife, actualLife)
   }
+
+    @Test
+    fun `test the holiday ASCII String Helper Algorithm`() {
+      var actualDemo = demoDay.holidayASCIIStringHelperAlgorithm("H")
+      Assertions.assertEquals(200, actualDemo)
+
+      actualDemo = demoDay.holidayASCIIStringHelperAlgorithm("HASH")
+      Assertions.assertEquals(52, actualDemo)
+    }
 }

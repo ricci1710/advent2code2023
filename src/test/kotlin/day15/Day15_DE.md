@@ -24,8 +24,7 @@ Rentier lehnt sich interessiert näher heran.
 Der HASH-Algorithmus ist eine Möglichkeit, eine beliebige Zeichenkette in eine einzelne Zahl im Bereich von 0 bis 255 zu verwandeln. Um den HASH-Algorithmus auf
 eine Zeichenkette anzuwenden, beginnen Sie mit einem aktuellen Wert von 0. Dann beginnen Sie für jedes Zeichen in der Zeichenkette vom Anfang an:
 
-Ermitteln Sie den ASCII-Code für das aktuelle Zeichen der Zeichenkette.
-
+- Ermitteln Sie den ASCII-Code für das aktuelle Zeichen der Zeichenkette.
 - Erhöhen Sie den aktuellen Wert um den soeben ermittelten ASCII-Code.
 - Setzen Sie den aktuellen Wert auf sich selbst multipliziert mit 17.
 - Setzen Sie den aktuellen Wert auf den Rest, der sich aus der Teilung durch 256 ergibt.
@@ -59,8 +58,10 @@ Zeilenumbrüche beim Parsen der Initialisierungssequenz. Um zu überprüfen, ob 
 Ausführung des HASH-Algorithmus für jeden Schritt in der Initialisierungssequenz.
 
 Zum Beispiel:
-
+```
 rn=1,cm-,qp=3,cm=2,qp-,pc=4,ot=9,ab=5,pc-,pc=6,ot=7
+```
+
 Diese Initialisierungssequenz legt 11 einzelne Schritte fest; das Ergebnis der Ausführung des HASH-Algorithmus auf jedem der Schritte ist wie folgt:
 
 - rn=1 wird zu 30.
