@@ -17,7 +17,7 @@ class Day15Test {
   @Test
   fun `calculate solution for life data part one`() {
     // Life-Data
-    val expectedLife = 0
+    val expectedLife = 512950
     val actualLife = lifeDay.calcPartOne()
     Assertions.assertEquals(expectedLife, actualLife)
   }
@@ -43,5 +43,16 @@ class Day15Test {
 
       actualDemo = demoDay.holidayASCIIStringHelperAlgorithm("HASH")
       Assertions.assertEquals(52, actualDemo)
+
+      actualDemo = demoDay.holidayASCIIStringHelperAlgorithm("rn=1")
+      Assertions.assertEquals(30, actualDemo)
     }
+
+  @Test
+  fun `parse start sequence from file`() {
+    val actualDemo = demoDay.parseSequence("rn=1,cm-,qp=3,cm=2,qp-,pc=4,ot=9,ab=5,pc-,pc=6,ot=7")
+    Assertions.assertEquals(11, actualDemo.size)
+    Assertions.assertEquals("rn=1", actualDemo[0])
+    Assertions.assertEquals("cm-", actualDemo[1])
+  }
 }

@@ -25,13 +25,23 @@ class Day15(dayNumber: Int, loadDemoData: Boolean) : Day(dayNumber, loadDemoData
     return hashCode
   }
 
+  fun parseSequence(sequence:String):List<String> {
+    return sequence.split(",").toList()
+  }
+
   /**
    * Berechnung der ersten Teilaufgabe
    * @returns {Int}
    * @override
    */
   override fun calcPartOne(): Int {
-    return 0
+    var result = 0
+    val sequence = storeData[0]
+    val sequenceSteps = parseSequence(sequence)
+    sequenceSteps.forEach{sequenceStep ->
+      result += holidayASCIIStringHelperAlgorithm(sequenceStep)
+    }
+    return result
   }
 
   /**
