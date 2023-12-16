@@ -4,9 +4,9 @@ import base.Day
 
 class Day12(dayNumber: Int, loadDemoData: Boolean) : Day(dayNumber, loadDemoData) {
   fun parseLine(line: String): Pair<String, List<Int>> {
-    var lineParts = line.split(" ")
-    var springField = lineParts[0]
-    var orderList: List<Int> = lineParts[1].split(",")
+    val lineParts = line.split(" ")
+    val springField = lineParts[0]
+    val orderList: List<Int> = lineParts[1].split(",")
       .map { it.trim().toInt() }
       .toList()
 
@@ -14,8 +14,11 @@ class Day12(dayNumber: Int, loadDemoData: Boolean) : Day(dayNumber, loadDemoData
   }
 
   fun calcPossibleOrders(lineInfo: Pair<String, List<Int>>): Int {
-    var springField = lineInfo.first
-    val unknownSprings = springField
+    val springField = lineInfo.first
+    val unknownSprings = Regex("\\?+")
+      .findAll(springField)
+      .toList()
+    println(unknownSprings)
     return 0
   }
 
