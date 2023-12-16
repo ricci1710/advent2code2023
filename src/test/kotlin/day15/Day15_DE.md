@@ -1,4 +1,5 @@
---- Tag 15: Linsenbibliothek ---
+**--- Tag 15: Linsenbibliothek ---**
+
 Die neu fokussierte Parabolantenne sendet das gesamte gesammelte Licht zu einem Punkt an der Seite eines weiteren Berges - des größten Berges auf der
 Lava-Insel. Als Sie sich dem Berg nähern, stellen Sie fest, dass das Licht von der Wand einer großen, in den Berghang eingelassenen Anlage aufgefangen wird.
 
