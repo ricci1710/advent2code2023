@@ -1,4 +1,5 @@
---- Day 16: The Floor Will Be Lava ---
+**--- Day 16: The Floor Will Be Lava ---**
+
 With the beam of light completely focused somewhere, the reindeer leads you deeper still into the Lava Production Facility. At some point, you realize that the
 steel facility walls have been replaced with cave, and the doorways are just cave, and the floor is cave, and you're pretty sure this is actually just a giant
 cave.
@@ -29,6 +30,7 @@ You note the layout of the contraption (your puzzle input). For example:
 
 The beam enters the top-left corner from the left and heading to the right. Then, its behavior depends on what it encounters as it moves:
 
+```
 - If the beam encounters empty space (.), it continues in the same direction.
 - If the beam encounters a mirror (/ or \), the beam is reflected 90 degrees depending on the angle of the mirror. For instance, a rightward-moving beam that
   encounters a / mirror would continue upward in the mirror's column, while a rightward-moving beam that encounters a \ mirror would continue downward from the
@@ -39,6 +41,7 @@ The beam enters the top-left corner from the left and heading to the right. Then
   are pointing. For instance, a rightward-moving beam that encounters a | splitter would split into two beams: one that continues upward from the splitter's
   column
   and one that continues downward from the splitter's column.
+```
 
 Beams do not interact with other beams; a tile can have many beams passing through it at the same time. A tile is energized if that tile has at least one beam
 pass through it, reflect in it, or split in it.

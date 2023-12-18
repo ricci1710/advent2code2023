@@ -8,7 +8,7 @@ Schließlich, als Sie sich dem Herzen des Berges nähern, sehen Sie ein helles L
 sorgfältig fokussiert hast, aus der Höhlenwand austritt, die der Anlage am nächsten ist, und seine gesamte Energie in eine Vorrichtung auf der
 gegenüberliegenden Seite leitet.
 
-Bei näherer Betrachtung scheint die Vorrichtung ein flaches, zweidimensionales, quadratisches Gitter zu sein, das leeren Raum (.), Spiegel (/ und \) und
+Bei näherer Betrachtung scheint die Vorrichtung ein flaches, zweidimensionales, quadratisches Gitter zu sein, das Leeren Raum (.), Spiegel (/ und \) und
 Teiler (| und -) enthält.
 
 Die Vorrichtung ist so ausgerichtet, dass der größte Teil des Strahls am Gitter abprallt, aber jede Kachel auf dem Gitter wandelt einen Teil des Lichts in Wärme

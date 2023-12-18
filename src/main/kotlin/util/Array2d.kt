@@ -1,25 +1,39 @@
 package util
 
-class Array2d(row: Int, column: Int) {
-  private val array2d: Array<IntArray> = Array(row) { IntArray(column) }
-  fun toPrint(): String {
-    return array2d.toString()
-  }
+class Array2d<T>(
+    private val rowSize: Int,
+    private val columnSize: Int,
+    defaultValue: T
+) {
+    private val array2d: MutableMap<Int, MutableList<T>> = mutableMapOf()
 
-  fun get(row:Int, column: Int): Int {
-    return array2d[row][column]
-  }
+    init {
+        for (rowIdx in 0..<rowSize) {
+            array2d[rowIdx] = mutableListOf()
+            for (columnIdx in 0..<columnSize) {
+                array2d[rowIdx]!!.add(columnIdx, defaultValue)
+            }
+        }
+    }
 
-  fun rowSize() = array2d.size
-  fun columnSize() = if (array2d.isNotEmpty()) array2d[0].size else 0
+    fun add(rowIdx: Int, columnIdx: Int, value: T) {
+        if ((rowIdx in 0..<rowSize) && (columnIdx in 0..<columnSize))
+            array2d[rowIdx]!![columnIdx] = value
+        else
+            throw IllegalArgumentException("Arguments are wrong")
+    }
 
-  fun fillSpiralPattern() {
-    if (rowSize() != columnSize())
-      throw Error("Pattern ar not available!")
+    fun get(rowIdx: Int, columnIdx: Int): T {
+        if ((rowIdx in 0..<rowSize) && (columnIdx in 0..<columnSize))
+            return array2d[rowIdx]!![columnIdx]
+        else
+            throw IllegalArgumentException("Arguments are wrong")
+    }
 
-    val startPoint = rowSize() / 2
+    override fun toString(): String {
+        var res = ""
+        array2d.forEach { res = res + it.value.joinToString("") + "\n" }
 
-    array2d[startPoint][startPoint] = 1
-    array2d[startPoint][startPoint + 1] = 2
-  }
+        return res
+    }
 }
