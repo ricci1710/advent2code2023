@@ -1,4 +1,5 @@
---- Tag 19: Reichlich ---
+**--- Tag 19: Reichlich ---**
+
 Die Elfen von Gear Island sind dankbar für deine Hilfe und schicken dich auf den Weg. Sie haben sogar einen Hängegleiter, den jemand von der Wüsteninsel
 gestohlen hat. Da du bereits in diese Richtung gehst, würde es ihnen sehr helfen, wenn du ihn benutzen würdest, um dorthin zu gelangen und ihn ihnen
 zurückzugeben.
