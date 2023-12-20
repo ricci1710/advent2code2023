@@ -76,17 +76,14 @@ class Day19(dayNumber: Int, loadDemoData: Boolean) : Day(dayNumber, loadDemoData
         val mapKey = splitLine[0]
         val instructionParts = splitLine[1].split(",")
 
-        val workflowInstruction = WorkflowInstruction()
+
+        val instruction: MutableList<Instruction> = mutableListOf()
         for (no in instructionParts.indices) {
             val step = instructionParts[no]
-            when (no) {
-                0 -> workflowInstruction.instruction0 = createInstruction(step)
-                1 -> workflowInstruction.instruction1 = createInstruction(step)
-                2 -> workflowInstruction.instruction2 = createInstruction(step)
-                3 -> workflowInstruction.instruction3 = createInstruction(step)
-            }
+            instruction.add(createInstruction(step))
         }
 
+        val workflowInstruction = WorkflowInstruction(instruction)
         workflow[mapKey] = workflowInstruction
         return workflowInstruction
     }
@@ -98,7 +95,17 @@ class Day19(dayNumber: Int, loadDemoData: Boolean) : Day(dayNumber, loadDemoData
      */
     override fun calcPartOne(): Int {
         splitInputData()
+
+        partRating.forEach { rating ->
+            val startSequence = workflow["in"] ?: throw InstantiationException("keyword 'in' in workflow not detected!")
+            runWorkflow(0, startSequence, rating)
+        }
+
         return 0
+    }
+
+    fun runWorkflow(sequenceNo: Int, sequence: WorkflowInstruction, rating: PartRating) {
+        val instruction = sequence.instruction[sequenceNo]
     }
 
     /**
@@ -111,12 +118,7 @@ class Day19(dayNumber: Int, loadDemoData: Boolean) : Day(dayNumber, loadDemoData
     }
 }
 
-data class WorkflowInstruction(
-    var instruction0: Instruction? = null,
-    var instruction1: Instruction? = null,
-    var instruction2: Instruction? = null,
-    var instruction3: Instruction? = null,
-)
+data class WorkflowInstruction(var instruction: MutableList<Instruction>)
 
 /**
  * class Instruction(Condition(a<2006) : workflowKey(qkq))
