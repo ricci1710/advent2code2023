@@ -19,7 +19,6 @@ class Day19(dayNumber: Int, loadDemoData: Boolean) : Day(dayNumber, loadDemoData
     }
 
     fun addPartRating(line: String): PartRating {
-
         val regex = Regex("\\{x=(\\d+),m=(\\d+),a=(\\d+),s=(\\d+)}")
 
         val matchResult = regex.findAll(line)
@@ -40,30 +39,33 @@ class Day19(dayNumber: Int, loadDemoData: Boolean) : Day(dayNumber, loadDemoData
         return rating
     }
 
-    private fun createInstruction(step: String): Instruction {
+    fun createInstruction(step: String): Instruction {
         val regEx = Regex("([a-z]+)([><])(\\d+):([a-zAR]+)")
 
-        val matchResult = regEx.findAll(step)
-            .toList()
-            .first()
-            .groups
+        val instruction: Instruction
+        if (regEx.matches(step)) {
+            val matchResult = regEx.findAll(step)
+                .toList()
+                .first()
+                .groups
 
-        val instruction = when (matchResult.size) {
-            2 -> Instruction(null, matchResult[1]!!.value)
-            5 -> Instruction(
-                Condition(
-                    matchResult[1]!!.value,
-                    matchResult[2]!!.value,
-                    matchResult[3]!!.value.toInt(),
-                ), matchResult[4]!!.value
-            )
+            instruction = when (matchResult.size) {
+                5 -> Instruction(
+                    Condition(
+                        matchResult[1]!!.value,
+                        matchResult[2]!!.value,
+                        matchResult[3]!!.value.toInt(),
+                    ), matchResult[4]!!.value
+                )
 
-            else -> {
-                throw IllegalArgumentException("Error::createInstruction()")
+                else -> {
+                    throw IllegalArgumentException("Error::createInstruction()")
+                }
             }
-        }
+        } else
+            instruction = Instruction(null, step)
 
-        Instruction(null, "rv")
+
         return instruction
     }
 

@@ -62,24 +62,113 @@ class Day19Test {
         val instruction2 = actualDemo.instruction2
         val instruction3 = actualDemo.instruction3
 
-        Assertions.assertEquals(actualDemo.instruction1, 787)
-        Assertions.assertEquals(actualDemo.instruction1, 787)
-        Assertions.assertEquals(actualDemo.instruction1, 787)
-        Assertions.assertEquals(actualDemo.instruction1, 787)
-    }
+        var workflowKey = instruction0!!.workflowKey
+        var condition = instruction0.condition
+        Assertions.assertEquals("a", condition!!.field)
+        Assertions.assertEquals("<", condition.operator)
+        Assertions.assertEquals(2006, condition.value)
+        Assertions.assertEquals("qkq", workflowKey)
 
-    @Test
-    fun `add workflow from input data pv`() {
-        val actualDemo = demoDay.addWorkflow("pv{a>1716:R,A}")
-        val instruction1 = actualDemo.instruction1
-        Assertions.assertEquals(actualDemo.instruction1, 787)
+        workflowKey = instruction1!!.workflowKey
+        condition = instruction1.condition
+        Assertions.assertEquals("m", condition!!.field)
+        Assertions.assertEquals(">", condition.operator)
+        Assertions.assertEquals(2090, condition.value)
+        Assertions.assertEquals("A", workflowKey)
+
+        workflowKey = instruction2!!.workflowKey
+        condition = instruction2.condition
+        Assertions.assertNull(condition)
+        Assertions.assertEquals("rfg", workflowKey)
+
+        Assertions.assertNull(instruction3)
     }
 
     @Test
     fun `add workflow from input data in`() {
         val actualDemo = demoDay.addWorkflow("in{s<1351:px,qqz}")
+        val instruction0 = actualDemo.instruction0
         val instruction1 = actualDemo.instruction1
-        Assertions.assertEquals(actualDemo.instruction1, 787)
+        val instruction2 = actualDemo.instruction2
+        val instruction3 = actualDemo.instruction3
+
+        var workflowKey = instruction0!!.workflowKey
+        var condition = instruction0.condition
+        Assertions.assertEquals("s", condition!!.field)
+        Assertions.assertEquals("<", condition.operator)
+        Assertions.assertEquals(1351, condition.value)
+        Assertions.assertEquals("px", workflowKey)
+
+        workflowKey = instruction1!!.workflowKey
+        condition = instruction1.condition
+        Assertions.assertNull(condition)
+        Assertions.assertEquals("qqz", workflowKey)
+
+        Assertions.assertNull(instruction2)
+        Assertions.assertNull(instruction3)
     }
 
+    @Test
+    fun `add workflow from input data ex`() {
+        val actualDemo = demoDay.addWorkflow("ex{x>10:eins,m<20:zwei,a>30:R,A}")
+        val instruction0 = actualDemo.instruction0
+        val instruction1 = actualDemo.instruction1
+        val instruction2 = actualDemo.instruction2
+        val instruction3 = actualDemo.instruction3
+
+        var workflowKey = instruction0!!.workflowKey
+        var condition = instruction0.condition
+        Assertions.assertEquals("x", condition!!.field)
+        Assertions.assertEquals(">", condition.operator)
+        Assertions.assertEquals(10, condition.value)
+        Assertions.assertEquals("eins", workflowKey)
+
+        workflowKey = instruction1!!.workflowKey
+        condition = instruction1.condition
+        Assertions.assertEquals("m", condition!!.field)
+        Assertions.assertEquals("<", condition.operator)
+        Assertions.assertEquals(20, condition.value)
+        Assertions.assertEquals("zwei", workflowKey)
+
+        workflowKey = instruction2!!.workflowKey
+        condition = instruction2.condition
+        Assertions.assertEquals("a", condition!!.field)
+        Assertions.assertEquals(">", condition.operator)
+        Assertions.assertEquals(30, condition.value)
+        Assertions.assertEquals("R", workflowKey)
+
+        workflowKey = instruction3!!.workflowKey
+        condition = instruction3.condition
+        Assertions.assertNull(condition)
+        Assertions.assertEquals("A", workflowKey)
+    }
+
+    @Test
+    fun `create instruction from string with condition`() {
+        val actualDemo = demoDay.createInstruction("s<1351:px")
+        val condition = actualDemo.condition
+        Assertions.assertNotNull(condition)
+        Assertions.assertEquals("s", condition!!.field)
+        Assertions.assertEquals("<", condition.operator)
+        Assertions.assertEquals(1351, condition.value)
+        Assertions.assertEquals("px", actualDemo.workflowKey)
+    }
+
+    @Test
+    fun `create instruction from string without condition`() {
+        var actualDemo = demoDay.createInstruction("A")
+        var condition = actualDemo.condition
+        Assertions.assertNull(condition)
+        Assertions.assertEquals("A", actualDemo.workflowKey)
+
+        actualDemo = demoDay.createInstruction("R")
+        condition = actualDemo.condition
+        Assertions.assertNull(condition)
+        Assertions.assertEquals("R", actualDemo.workflowKey)
+
+        actualDemo = demoDay.createInstruction("lnx")
+        condition = actualDemo.condition
+        Assertions.assertNull(condition)
+        Assertions.assertEquals("lnx", actualDemo.workflowKey)
+    }
 }
