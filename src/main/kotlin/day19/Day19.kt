@@ -105,7 +105,52 @@ class Day19(dayNumber: Int, loadDemoData: Boolean) : Day(dayNumber, loadDemoData
     }
 
     fun runWorkflow(sequenceNo: Int, sequence: WorkflowInstruction, rating: PartRating) {
-        val instruction = sequence.instruction[sequenceNo]
+        val (condition, workflowKey) = sequence.instruction[sequenceNo]
+        if (condition != null) {
+            val (field, operator, value) = condition
+            val res = when (field) {
+                "x" -> {
+                    when (operator) {
+                        ">" -> value > rating.x
+                        "<" -> value < rating.x
+                        else -> workflowKey
+                    }
+                }
+
+                "m" -> {
+                    when (operator) {
+                        ">" -> value > rating.m
+                        "<" -> value < rating.m
+                        else -> workflowKey
+                    }
+
+                }
+
+                "a" -> {
+                    when (operator) {
+                        ">" -> value > rating.a
+                        "<" -> value < rating.a
+                        else -> workflowKey
+                    }
+
+                }
+
+                "s" -> {
+                    when (operator) {
+                        ">" -> value > rating.s
+                        "<" -> value < rating.s
+                        else -> workflowKey
+                    }
+                }
+
+                else -> {
+                    throw IllegalArgumentException("")
+                }
+            }
+            println(res)
+        }
+        println(condition)
+        println(workflowKey)
     }
 
     /**
