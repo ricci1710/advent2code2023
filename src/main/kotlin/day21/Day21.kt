@@ -17,9 +17,13 @@ class Day21(dayNumber: Int, loadDemoData: Boolean) : Day(dayNumber, loadDemoData
     }
   }
 
-  private fun findStartPoint() {
-    val startCoordinate = gardenPlan.find('S')
-    println(startCoordinate)
+  private fun findStartPoint(): Pair<Int, Int> {
+    return gardenPlan.find('S')!!
+  }
+
+  private fun walkThrough(step: Int, visitedList: MutableMap<Int, MutableList<Coordinate>>): Int {
+    println("$step $visitedList")
+    return 0
   }
 
   fun calcPartOne(steps: Int): Int {
@@ -34,9 +38,11 @@ class Day21(dayNumber: Int, loadDemoData: Boolean) : Day(dayNumber, loadDemoData
    */
   override fun calcPartOne(): Int {
     readGardenPlan()
-    println(gardenPlan.toString())
-    findStartPoint()
-    return 0
+    val startCoordinate = findStartPoint()
+    val visitedList: MutableMap<Int, MutableList<Coordinate>> = mutableMapOf()
+
+    visitedList[0] = mutableListOf(Coordinate(startCoordinate.first, startCoordinate.second))
+    return walkThrough(1, visitedList)
   }
 
   /**
@@ -48,3 +54,5 @@ class Day21(dayNumber: Int, loadDemoData: Boolean) : Day(dayNumber, loadDemoData
     return 0
   }
 }
+
+data class Coordinate(var row: Int, var column: Int)
