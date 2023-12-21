@@ -42,19 +42,27 @@ class Array2d<T>(
     return res
   }
 
-  fun addColumn() {
+  fun addEmptyColumn() {
     for (rowIdx in 0..<rowSize) {
       array2d[rowIdx]!!.add(columnSize, defaultValue)
     }
     columnSize += 1
   }
 
-  fun addRow() {
+  fun addEmptyRow() {
     array2d[rowSize] = mutableListOf()
     for (columnIdx in 0..<columnSize) {
       array2d[rowSize]!!.add(columnIdx, defaultValue)
     }
 
     rowSize += 1
+  }
+
+  fun addRowData(row: Int, valueList: List<T>) {
+    var column = 0
+    valueList.forEach { value ->
+      add(row, column, value)
+      column += 1
+    }
   }
 }

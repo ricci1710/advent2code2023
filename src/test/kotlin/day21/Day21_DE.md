@@ -1,4 +1,5 @@
---- Tag 21: Schrittzähler ---
+**--- Tag 21: Schrittzähler ---**
+
 Du schaffst es, das Luftschiff genau in dem Moment zu erwischen, in dem es jemand anderen auf seiner Pauschalreise nach Desert Island absetzt! Es setzt dich
 sogar hilfsbereit in der Nähe des Gärtners und seiner riesigen Farm ab.
 

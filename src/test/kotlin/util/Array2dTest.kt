@@ -27,7 +27,7 @@ class Array2dTest {
     Assertions.assertEquals(5, grid.rowSize)
     Assertions.assertEquals(5, grid.columnSize)
 
-    grid.addColumn()
+    grid.addEmptyColumn()
 
     Assertions.assertEquals(5, grid.rowSize)
     Assertions.assertEquals(6, grid.columnSize)
@@ -43,7 +43,7 @@ class Array2dTest {
     Assertions.assertEquals(5, grid.rowSize)
     Assertions.assertEquals(5, grid.columnSize)
 
-    grid.addRow()
+    grid.addEmptyRow()
 
     Assertions.assertEquals(6, grid.rowSize)
     Assertions.assertEquals(5, grid.columnSize)
