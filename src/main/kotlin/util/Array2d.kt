@@ -65,4 +65,25 @@ class Array2d<T>(
       column += 1
     }
   }
+
+  private fun getRow(row: Int): List<T> {
+    return array2d[row]?.toList() ?: throw IllegalArgumentException("Row-Index out of range!")
+  }
+
+  fun find(value: T): Pair<Int, Int>? {
+    var found = false
+    var coordinate = Pair(0, 0)
+
+    for (rowIdx in 0..<rowSize) {
+      val pos = getRow(rowIdx).indexOf(value)
+      found = pos >= 0
+      if (!found)
+        continue
+
+      coordinate = Pair(rowIdx, pos)
+      break
+    }
+
+    return if (found) coordinate else null
+  }
 }

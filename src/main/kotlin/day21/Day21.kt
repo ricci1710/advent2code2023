@@ -17,6 +17,11 @@ class Day21(dayNumber: Int, loadDemoData: Boolean) : Day(dayNumber, loadDemoData
     }
   }
 
+  private fun findStartPoint() {
+    val startCoordinate = gardenPlan.find('S')
+    println(startCoordinate)
+  }
+
   fun calcPartOne(steps: Int): Int {
     this.steps = steps
     return calcPartOne()
@@ -30,6 +35,7 @@ class Day21(dayNumber: Int, loadDemoData: Boolean) : Day(dayNumber, loadDemoData
   override fun calcPartOne(): Int {
     readGardenPlan()
     println(gardenPlan.toString())
+    findStartPoint()
     return 0
   }
 
