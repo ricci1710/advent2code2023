@@ -83,3 +83,57 @@ Lassen Sie die Z-Achse völlig außer Acht.
 Betrachten Sie nur die X- und Y-Achse und überprüfen Sie alle Paare von Hagelkörnern auf Überschneidungen ihrer zukünftigen Bahnen.
 
 **Wie viele dieser Schnittpunkte treten innerhalb des Testgebiets auf?**
+
+https://mathegym.de/mathe/wissen/635/wie-ermittelt-man-die-gleichung-einer-geraden-wenn-zwei-punkte-gegeben-sind
+
+https://studyflix.de/mathematik/schnittpunkt-zweier-geraden-1904
+
+```
+Schnittpunkt:
+
+Hagelkorn A: 19, 13, 30 @ -2, 1, -2
+Hagelkorn B: 18, 19, 22 @ -1, -1, -2
+Die Bahnen der Hagelkörner kreuzen sich innerhalb des Testbereichs (bei x=14,333, y=15,333).
+
+
+19, 13, 30 @ -2, 1, -2.  =>
+
+P1(19, 13).  P2(17, 14)
+
+dx = P2x - P1x = 17 - 19 =  -2
+dy = P2y - P1y = 14 - 13 =   1
+
+1. Bestimme zunächst die Steigung m = Δy / Δx -> m = - 1/2
+2. Setze dann in die Gleichung y = m·x + b die Koordinaten von einem der beiden Punkte ein und löse die Gleichung nach b auf.
+
+y = m * x + b => b = y - m * x
+
+b = 13 - (-1/2) *19 = 22.5
+
+f(x) = y = -0.5 * x + 22.5
+
+————————————————————————————————————————————————————————————————
+
+18, 19, 22 @ -1, -1, -2
+P1(18,19)  P2(17,18)
+
+m = Δy / Δx -> m = 1
+b = 19 - 1 * 18 = 1
+
+g(x) = x + 1
+
+
+Schnittpunkt zweier Geraden berechnen – kurz & knapp
+1. Funktionen gleichsetzen.
+2. Nach x auflösen.
+3. y-Koordinate berechnen
+4. Probe: x in die zweite Gleichung einsetzen
+5. Schnittpunkt angeben
+
+
+-0.5 * x + 22.5 = x + 1       | -1 |  +0.5 * x
+21.5 = 1/2 + 2/2 = 3/2x
+
+21.5 * 2 / 3 = x = 14,33333
+               y = 15,33333
+```
