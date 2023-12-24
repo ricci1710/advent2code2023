@@ -108,38 +108,63 @@ class Day19(dayNumber: Int, loadDemoData: Boolean) : Day(dayNumber, loadDemoData
         val (condition, workflowKey) = sequence.instruction[sequenceNo]
         if (condition != null) {
             val (field, operator, value) = condition
-            val res = when (field) {
+            when (field) {
                 "x" -> {
                     when (operator) {
-                        ">" -> value > rating.x
-                        "<" -> value < rating.x
-                        else -> workflowKey
+                        ">" -> {
+                            if (rating.x > value)
+                                runNextWorkflow(workflowKey, rating)
+                            else
+                                nextSequence(sequenceNo, sequence, rating)
+                        }
+
+                        "<" -> {
+                            if (rating.x < value)
+                                runNextWorkflow(workflowKey, rating)
+                            else
+                                nextSequence(sequenceNo, sequence, rating)
+                        }
+
+                        else -> nextSequence(sequenceNo, sequence, rating)
                     }
                 }
 
                 "m" -> {
                     when (operator) {
-                        ">" -> value > rating.m
-                        "<" -> value < rating.m
-                        else -> workflowKey
+                        ">" -> rating.m > value
+                        "<" -> rating.m < value
+                        else -> nextSequence(sequenceNo, sequence, rating)
                     }
 
                 }
 
                 "a" -> {
                     when (operator) {
-                        ">" -> value > rating.a
-                        "<" -> value < rating.a
-                        else -> workflowKey
+                        ">" -> rating.a > value
+                        "<" -> rating.a < value
+                        else -> nextSequence(sequenceNo, sequence, rating)
                     }
 
                 }
 
                 "s" -> {
                     when (operator) {
-                        ">" -> value > rating.s
-                        "<" -> value < rating.s
-                        else -> workflowKey
+                        ">" -> {
+                            if (rating.s > value)
+                                runNextWorkflow(workflowKey, rating)
+                            else
+                                nextSequence(sequenceNo, sequence, rating)
+                        }
+
+                        "<" -> {
+                            if (rating.s < value)
+                                runNextWorkflow(workflowKey, rating)
+                            else
+                                nextSequence(sequenceNo, sequence, rating)
+                        }
+
+                        else -> nextSequence(sequenceNo, sequence, rating)
+
                     }
                 }
 
@@ -147,10 +172,28 @@ class Day19(dayNumber: Int, loadDemoData: Boolean) : Day(dayNumber, loadDemoData
                     throw IllegalArgumentException("")
                 }
             }
-            println(res)
+        } else {
+            when (workflowKey) {
+                "A" -> Unit
+                "R" -> Unit
+                else -> {
+                    runNextWorkflow(workflowKey, rating)
+                }
+            }
         }
+
         println(condition)
         println(workflowKey)
+    }
+
+    private fun nextSequence(sequenceNo: Int, workflow: WorkflowInstruction, rating: PartRating) {
+        val newSequenceNo = sequenceNo + 1
+        runWorkflow(newSequenceNo, workflow, rating)
+    }
+
+    private fun runNextWorkflow(workflowKey: String, rating: PartRating) {
+        val startSequence = workflow[workflowKey] ?: throw InstantiationException("keyword '$workflowKey' in workflow not detected!")
+        runWorkflow(0, startSequence, rating)
     }
 
     /**
