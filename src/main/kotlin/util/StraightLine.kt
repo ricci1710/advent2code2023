@@ -33,11 +33,11 @@ class StraightLine {
   /**
    * Bestimme zunächst die Steigung m = Δy / Δx
    */
-  private fun getGradient(p1: Point, p2: Point): Double {
-    return (p2.y.toDouble() - p1.y.toDouble()) / (p2.x - p1.x) * 1.0
+  fun getGradient(p1: Point, p2: Point): Double {
+    return (p2.y - p1.y) / (p2.x - p1.x) * 1.0
   }
 
-  private fun getB(p: Point, m: Double): Double {
+  fun getB(p: Point, m: Double): Double {
     return p.y - m * p.x
   }
 
