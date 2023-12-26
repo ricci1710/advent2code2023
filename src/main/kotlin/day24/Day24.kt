@@ -42,14 +42,10 @@ class Day24(dayNumber: Int, loadDemoData: Boolean, private val min: Long, privat
     createDataFromInput()
     var res = 0
     while (infoData.size > 2) {
-      val testStraightLine = infoData.removeAt(0).straightLine
-      infoData.forEach { info ->
-        val intersection = testStraightLine.intersection(info.straightLine)
-        // time 0ns
-        val startPoint = StraightLine.Point(info.xCoordinate.toDouble(), info.yCoordinate.toDouble())
-        val endPoint = StraightLine.Point(startPoint.x - info.xVelocity, startPoint.y - info.yCoordinate)
-
-        if (checkIntersectionInRange(startPoint, endPoint, intersection))
+      val testInfoDataA = infoData.removeAt(0)
+      infoData.forEach { testInfoDataB ->
+        val intersection = testInfoDataA.straightLine.intersection(testInfoDataB.straightLine)
+        if (checkIntersectionInRange(testInfoDataA, testInfoDataB, intersection))
           res += 1
       }
     }
@@ -66,16 +62,21 @@ class Day24(dayNumber: Int, loadDemoData: Boolean, private val min: Long, privat
   }
 
   private fun checkIntersectionInRange(
-    startPoint: StraightLine.Point,
-    endPoint: StraightLine.Point,
+    testInfoDataA: InfoData,
+    testInfoDataB: InfoData,
     intersection: StraightLine.Point,
   ): Boolean {
     // Hailstones' paths crossed in the past for hailstone A
-    if (intersection.x < startPoint.x)
+    // anhand der Geschwindigkeit schauen, ob der Punkt in Vergangenheit liegt
+    if (testInfoDataA.xVelocity < 0 && intersection.x > testInfoDataA.xCoordinate)
       return false
-
-    // Hailstones' paths crossed in the past for hailstone B
-    if (intersection.x < endPoint.x)
+    else if (testInfoDataA.xVelocity > 0 && intersection.x < testInfoDataA.xCoordinate)
+      return false
+    // Hailstones' paths crossed in the past for hailstone A
+    // anhand der Geschwindigkeit schauen, ob der Punkt in Vergangenheit liegt
+    else if (testInfoDataB.xVelocity < 0 && intersection.x > testInfoDataB.xCoordinate)
+      return false
+    else if (testInfoDataB.xVelocity > 0 && intersection.x < testInfoDataB.xCoordinate)
       return false
 
     return intersection.x >= min && intersection.x <= max && intersection.y >= min && intersection.y <= max
