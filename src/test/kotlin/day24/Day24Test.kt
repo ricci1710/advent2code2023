@@ -24,7 +24,7 @@ class Day24Test {
 
   @Test
   fun `calculate solution for demo data part two`() {
-    val expectedDemo = 0
+    val expectedDemo = 47
     val actualDemo = demoDay.calcPartTwo()
     Assertions.assertEquals(expectedDemo, actualDemo)
   }

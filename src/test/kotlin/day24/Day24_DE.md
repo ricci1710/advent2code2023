@@ -137,3 +137,57 @@ Schnittpunkt zweier Geraden berechnen – kurz & knapp
 21.5 * 2 / 3 = x = 14,33333
                y = 15,33333
 ```
+
+**--- Zweiter Teil ---**
+
+Bei näherer Betrachtung sieht es nicht so aus, als würden die Hagelkörner auf natürliche Weise zusammenstoßen.
+Es liegt an dir, das zu ändern!
+
+Du findest einen Stein in der Nähe auf dem Boden.
+Es scheint zwar sehr unwahrscheinlich, aber wenn du ihn richtig wirfst, solltest du in der Lage sein, jedes
+Hagelkorn mit einem einzigen Wurf zu treffen!
+
+Du kannst die wahrscheinlich magischen Winde nutzen, um eine beliebige ganzzahlige Position zu erreichen und den Stein mit einer beliebigen ganzzahligen
+Geschwindigkeit zu befördern.
+
+Wenn du nun die Z-Achse in deine Berechnungen einbeziehst und den Stein zum Zeitpunkt 0 wirfst, wo musst du dann sein, damit der
+Stein perfekt mit jedem Hagelkorn zusammenstößt? Aufgrund der wahrscheinlich magischen Trägheit wird der Stein nicht langsamer oder ändert seine Richtung, wenn
+er mit einem Hagelkorn zusammenstößt.
+
+Im obigen Beispiel kannst du dies erreichen, indem du dich zur Position 24, 13, 10 bewegst und den Stein mit der Geschwindigkeit -3, 1, 2 wirfst.
+Wenn Sie dies tun, werden Sie jedes Hagelkorn wie folgt treffen:
+
+```
+Hagelkorn: 19, 13, 30 @ -2, 1, -2
+Aufprallzeit: 5
+Aufprall-Position: 9, 18, 20
+
+Hagelkorn: 18, 19, 22 @ -1, -1, -2
+Zeit der Kollision: 3
+Kollisionsposition: 15, 16, 16
+
+Hagelstein: 20, 25, 34 @ -2, -2, -4
+Zeit der Kollision: 4
+Position der Kollision: 12, 17, 18
+
+Hagelstein: 12, 31, 28 @ -1, -2, -1
+Kollisionszeit: 6
+Kollisionsposition: 6, 19, 22
+
+Hagelkorn: 20, 19, 15 @ 1, -5, -3
+Kollisionszeit: 1
+Kollisionsposition: 21, 14, 12
+```
+
+Oben wird jedes Hagelkorn durch seine Ausgangsposition und seine Geschwindigkeit identifiziert.
+Dann werden der Zeitpunkt und die Position des Zusammenstoßes dieses Hagelkorns mit Ihrem Felsen angegeben.
+
+Nach 1 Nanosekunde hat der Felsen genau die gleiche Position wie eines der Hagelkörner und zerfällt in Eisstaub!
+Zwei Nanosekunden später wird ein weiteres Hagelkorn zertrümmert.
+Nach insgesamt 6 Nanosekunden sind alle Hagelkörner zerstört.
+
+Zum Zeitpunkt 0 muss sich der Stein also an X-Position 24, Y-Position 13 und Z-Position 10 befinden.
+Die Addition dieser drei Koordinaten ergibt 47 (fügen Sie keine Koordinaten aus der Geschwindigkeit des Steins hinzu).
+
+Bestimme die genaue Position und Geschwindigkeit, die der Stein zum Zeitpunkt 0 haben muss, damit er mit jedem Hagelkorn perfekt zusammenstößt.
+Was erhältst du, wenn du die X-, Y- und Z-Koordinaten dieser Ausgangsposition addierst?
