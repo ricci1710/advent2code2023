@@ -1,15 +1,15 @@
-package day24
+package day25
 
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
 
-class Day24Test {
-  private val demoDay = Day24(24, true, 7, 27)
-  private val lifeDay = Day24(24, false, 200000000000000, 400000000000000)
+class Day25Test {
+  private val demoDay = Day25(25, true)
+  private val lifeDay = Day25(25, false)
 
   @Test
   fun `calculate solution for demo data part one`() {
-    val expectedDemo = 2
+    val expectedDemo = 0
     val actualDemo = demoDay.calcPartOne()
     Assertions.assertEquals(expectedDemo, actualDemo)
   }
@@ -17,7 +17,7 @@ class Day24Test {
   @Test
   fun `calculate solution for life data part one`() {
     // Life-Data
-    val expectedLife = 0
+    val expectedLife = 54
     val actualLife = lifeDay.calcPartOne()
     Assertions.assertEquals(expectedLife, actualLife)
   }

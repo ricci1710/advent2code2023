@@ -38,13 +38,13 @@ class StraightLineTest {
   }
 
   @Test
-  fun getGradient() {
+  fun `get the gradient m`() {
     val fx = StraightLine(Point(0, 0), Point(0, 0))
     Assertions.assertEquals(-0.5, fx.getGradient(StraightLine.Point(19.0, 13.0), StraightLine.Point(17.0, 14.0)))
   }
 
   @Test
-  fun getB() {
+  fun `get the variable b`() {
     val fx = StraightLine(Point(0, 0), Point(0, 0))
     val res = fx.getB(StraightLine.Point(19.0, 13.0), -0.5)
     Assertions.assertEquals(22.5, res)

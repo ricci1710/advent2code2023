@@ -14,8 +14,8 @@ class StraightLine {
   }
 
   constructor(p1: java.awt.Point, p2: java.awt.Point) {
-    val pp1 = Point(p1.x * 1.0, p1.y * 1.0)
-    val pp2 = Point(p2.x * 1.0, p2.y * 1.0)
+    val pp1 = Point(p1.x.toDouble(), p1.y.toDouble())
+    val pp2 = Point(p2.x.toDouble(), p2.y.toDouble())
 
     this.m = getGradient(pp1, pp2)
     this.b = getB(pp1, m)
@@ -34,7 +34,7 @@ class StraightLine {
    * Bestimme zunächst die Steigung m = Δy / Δx
    */
   fun getGradient(p1: Point, p2: Point): Double {
-    return (p2.y - p1.y) / (p2.x - p1.x) * 1.0
+    return (p2.y - p1.y) / (p2.x - p1.x)
   }
 
   fun getB(p: Point, m: Double): Double {
