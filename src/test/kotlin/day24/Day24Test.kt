@@ -17,7 +17,7 @@ class Day24Test {
   @Test
   fun `calculate solution for life data part one`() {
     // Life-Data
-    val expectedLife = 0
+    val expectedLife = 16727
     val actualLife = lifeDay.calcPartOne()
     Assertions.assertEquals(expectedLife, actualLife)
   }
