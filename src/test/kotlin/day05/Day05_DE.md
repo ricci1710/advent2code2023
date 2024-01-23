@@ -1,11 +1,13 @@
---- Tag 5: Wenn man einer Saat einen Dünger gibt ---
+**--- Tag 5: Wenn man einer Saat einen Dünger gibt ---**
+
 Du nimmst das Boot und findest den Gärtner genau dort, wo du ihn vermutet hast: Er bewirtschaftet einen riesigen "Garten", der für dich eher wie ein Bauernhof
 aussieht.
 
-"Eine Wasserquelle? Island Island ist die Wasserquelle!" Sie weisen darauf hin, dass Snow Island kein Wasser erhält.
+"Eine Wasserquelle? Island ist die Wasserquelle!" Sie weisen darauf hin, dass Snow Island kein Wasser erhält.
 
 "Oh, wir mussten das Wasser stoppen, weil uns der Sand zum Filtern ausgegangen ist! Mit schmutzigem Wasser kann man keinen Schnee machen. Keine Sorge, ich bin
-sicher, dass wir bald mehr Sand bekommen; wir haben das Wasser nur ein paar Tage... Wochen... oh nein." Sein Gesicht verzieht sich zu einem Ausdruck entsetzter
+sicher, dass wir bald mehr Sand bekommen; wir haben das Wasser nur ein paar Tage ... Wochen ... oh nein."
+Sein Gesicht verzieht sich zu einem Ausdruck entsetzter
 Erkenntnis.
 
 "Ich war so damit beschäftigt, dafür zu sorgen, dass alle hier etwas zu essen haben, dass ich ganz vergessen habe, nachzusehen, warum wir keinen Sand mehr
