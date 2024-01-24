@@ -33,12 +33,12 @@ abstract class Day(dayNumber: Int, loadDemoData: Boolean, postFix: String = "") 
    * @returns {Int}
    * @abstract
    */
-  abstract fun calcPartOne(): Int
+  abstract fun calcPartOne(): Long
 
   /**
    * Berechnung der zweiten Teilaufgabe
    * @returns {Int}
    * @abstract
    */
-  abstract fun calcPartTwo(): Int
+  abstract fun calcPartTwo(): Long
 }

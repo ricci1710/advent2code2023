@@ -90,8 +90,8 @@ class Day01(dayNumber: Int, loadDemoData: Boolean) : Day(dayNumber, loadDemoData
    * @returns {Int}
    * @override
    */
-  override fun calcPartOne(): Int {
-    return calcCalibration(storeData)
+  override fun calcPartOne(): Long {
+    return calcCalibration(storeData).toLong()
   }
 
   /**
@@ -99,7 +99,7 @@ class Day01(dayNumber: Int, loadDemoData: Boolean) : Day(dayNumber, loadDemoData
    * @returns {Int}
    * @override
    */
-  override fun calcPartTwo(): Int {
-    return calcCalibrationVersion2(storeData)
+  override fun calcPartTwo(): Long {
+    return calcCalibrationVersion2(storeData).toLong()
   }
 }

@@ -28,7 +28,7 @@ class Day02(dayNumber: Int, loadDemoData: Boolean, private val configData: PlayD
   }
 
   private fun check(playerResult: List<String>): Pair<Boolean, PlayData> {
-    val maxColorValues = PlayData(0,0,0);
+    val maxColorValues = PlayData(0, 0, 0);
 
     var isCheckOk = true
     playerResult.forEach { round ->
@@ -49,20 +49,21 @@ class Day02(dayNumber: Int, loadDemoData: Boolean, private val configData: PlayD
     return Pair(isCheckOk, maxColorValues)
   }
 
-  private fun getId(lineId:String):Int {
+  private fun getId(lineId: String): Int {
     return Regex("[0-9]+").findAll(lineId)
       .map(MatchResult::value)
       .joinToString()
       .toInt()
   }
-  private fun getValueAndNameList(part:String):List<Pair<String, Int>> {
+
+  private fun getValueAndNameList(part: String): List<Pair<String, Int>> {
     return Regex("([0-9]+) ([a-z]+)").findAll(part)
       .map(MatchResult::groupValues)
       .map { Pair<String, Int>(it[2], it[1].toInt()) }
       .toList()
   }
 
-  private fun getPlayerDetails(player: PlayData, valueAndName: List<Pair<String, Int>>):PlayData {
+  private fun getPlayerDetails(player: PlayData, valueAndName: List<Pair<String, Int>>): PlayData {
     valueAndName.forEach { atom ->
       when (atom.first) {
         "red" -> player.red = atom.second
@@ -79,8 +80,8 @@ class Day02(dayNumber: Int, loadDemoData: Boolean, private val configData: PlayD
    * @returns {Int}
    * @override
    */
-  override fun calcPartOne(): Int {
-    return calc()
+  override fun calcPartOne(): Long {
+    return calc().toLong()
   }
 
   /**
@@ -88,8 +89,8 @@ class Day02(dayNumber: Int, loadDemoData: Boolean, private val configData: PlayD
    * @returns {Int}
    * @override
    */
-  override fun calcPartTwo(): Int {
-    return calcVersion2()
+  override fun calcPartTwo(): Long {
+    return calcVersion2().toLong()
   }
 }
 

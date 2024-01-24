@@ -3,33 +3,33 @@ package day04
 import base.Day
 
 class Day04(dayNumber: Int, loadDemoData: Boolean) : Day(dayNumber, loadDemoData) {
-  private var scratchCardsCounter = mutableMapOf<Int, Int> ()
+  private var scratchCardsCounter = mutableMapOf<Int, Int>()
 
-  private fun calc(callback: (lineNo:Int, findCards:List<String>) -> Int): Int {
-    var result = 0
+  private fun calc(callback: (lineNo: Int, findCards: List<String>) -> Long): Long {
+    var result = 0L
 
     for (lineNo in storeData.indices) {
       val (cardStack1, cardStack2) = getCardStacks(storeData[lineNo])
       val findCards = cardStack2.filter { item -> item in cardStack1 }
-      result += callback(lineNo+1, findCards) // we start with card number 1
+      result += callback(lineNo + 1, findCards) // we start with card number 1
     }
 
     return result
   }
 
-  private fun calcCardPoints(lineNo: Int, findCards:List<String>):Int {
-    var cardPoints = 0
+  private fun calcCardPoints(lineNo: Int, findCards: List<String>): Long {
+    var cardPoints = 0L
     for (i in findCards.indices) {
       if (i == 0)
-        cardPoints = 1
+        cardPoints = 1L
       else
-        cardPoints *= 2
+        cardPoints *= 2L
     }
 
     return cardPoints
   }
 
-  private fun calcScratchCardsScore(lineNo: Int, findCards:List<String>):Int {
+  private fun calcScratchCardsScore(lineNo: Int, findCards: List<String>): Long {
     incrementScratchCardsScore(lineNo)
 
     val matching = findCards.size
@@ -51,7 +51,7 @@ class Day04(dayNumber: Int, loadDemoData: Boolean) : Day(dayNumber, loadDemoData
     }
   }
 
-  private fun getCardStacks(line:String): Pair<List<String>,List<String>> {
+  private fun getCardStacks(line: String): Pair<List<String>, List<String>> {
     val regEx = Regex("\\s+")
 
     val cardStacks = line.split(":")[1].split("|")
@@ -66,8 +66,8 @@ class Day04(dayNumber: Int, loadDemoData: Boolean) : Day(dayNumber, loadDemoData
    * @returns {Int}
    * @override
    */
-  override fun calcPartOne(): Int {
-    return calc { lineNo, findCards -> calcCardPoints(lineNo,findCards) }
+  override fun calcPartOne(): Long {
+    return calc { lineNo, findCards -> calcCardPoints(lineNo, findCards) }
   }
 
   /**
@@ -75,8 +75,8 @@ class Day04(dayNumber: Int, loadDemoData: Boolean) : Day(dayNumber, loadDemoData
    * @returns {Int}
    * @override
    */
-  override fun calcPartTwo(): Int {
-    var result = 0
+  override fun calcPartTwo(): Long {
+    var result = 0L
     calc { lineNo, findCards -> calcScratchCardsScore(lineNo, findCards) }
     for (value in scratchCardsCounter.values) {
       result += value

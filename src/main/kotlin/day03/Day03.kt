@@ -9,8 +9,8 @@ class Day03(dayNumber: Int, loadDemoData: Boolean, postFix: String = "") : Day(d
    * @returns {Int}
    * @override
    */
-  override fun calcPartOne(): Int {
-    return calc()
+  override fun calcPartOne(): Long {
+    return calc().toLong()
   }
 
   private fun calc(): Int {
@@ -83,11 +83,11 @@ class Day03(dayNumber: Int, loadDemoData: Boolean, postFix: String = "") : Day(d
    * @returns {Int}
    * @override
    */
-  override fun calcPartTwo(): Int {
+  override fun calcPartTwo(): Long {
     return calcVersion2()
   }
 
-  private fun calcVersion2(): Int {
+  private fun calcVersion2(): Long {
     var lineIndex = 0
     var result = 0
 
@@ -95,7 +95,7 @@ class Day03(dayNumber: Int, loadDemoData: Boolean, postFix: String = "") : Day(d
       result += calculateLineVersion2(lineIndex, line)
       lineIndex += 1
     }
-    return result
+    return result.toLong()
   }
 
   private fun calculateLineVersion2(lineIndex: Int, line: String): Int {
