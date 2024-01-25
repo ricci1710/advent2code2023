@@ -35,12 +35,12 @@ class Day24(dayNumber: Int, loadDemoData: Boolean, private val min: Long, privat
 
   /**
    * Berechnung der ersten Teilaufgabe
-   * @returns {Int}
+   * @returns {Long}
    * @override
    */
-  override fun calcPartOne(): Int {
+  override fun calcPartOne(): Long {
     createDataFromInput()
-    var res = 0
+    var res = 0L
     while (infoData.size > 2) {
       val testInfoDataA = infoData.removeAt(0)
       infoData.forEach { testInfoDataB ->
@@ -54,11 +54,11 @@ class Day24(dayNumber: Int, loadDemoData: Boolean, private val min: Long, privat
 
   /**
    * Berechnung der zweiten Teilaufgabe
-   * @returns {Int}
+   * @returns {Long}
    * @override
    */
-  override fun calcPartTwo(): Int {
-    return 0
+  override fun calcPartTwo(): Long {
+    return 0L
   }
 
   private fun checkIntersectionInRange(

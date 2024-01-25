@@ -77,7 +77,7 @@ class Day02(dayNumber: Int, loadDemoData: Boolean, private val configData: PlayD
 
   /**
    * Berechnung der ersten Teilaufgabe
-   * @returns {Int}
+   * @returns {Long}
    * @override
    */
   override fun calcPartOne(): Long {
@@ -86,7 +86,7 @@ class Day02(dayNumber: Int, loadDemoData: Boolean, private val configData: PlayD
 
   /**
    * Berechnung der zweiten Teilaufgabe
-   * @returns {Int}
+   * @returns {Long}
    * @override
    */
   override fun calcPartTwo(): Long {

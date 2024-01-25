@@ -24,19 +24,19 @@ class Day12(dayNumber: Int, loadDemoData: Boolean) : Day(dayNumber, loadDemoData
 
   /**
    * Berechnung der ersten Teilaufgabe
-   * @returns {Int}
+   * @returns {Long}
    * @override
    */
-  override fun calcPartOne(): Int {
-    return 0
+  override fun calcPartOne(): Long {
+    return 0L
   }
 
   /**
    * Berechnung der zweiten Teilaufgabe
-   * @returns {Int}
+   * @returns {Long}
    * @override
    */
-  override fun calcPartTwo(): Int {
-    return 0
+  override fun calcPartTwo(): Long {
+    return 0L
   }
 }

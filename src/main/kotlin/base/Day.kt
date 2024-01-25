@@ -30,14 +30,14 @@ abstract class Day(dayNumber: Int, loadDemoData: Boolean, postFix: String = "") 
 
   /**
    * Berechnung der ersten Teilaufgabe
-   * @returns {Int}
+   * @returns {Long}
    * @abstract
    */
   abstract fun calcPartOne(): Long
 
   /**
    * Berechnung der zweiten Teilaufgabe
-   * @returns {Int}
+   * @returns {Long}
    * @abstract
    */
   abstract fun calcPartTwo(): Long

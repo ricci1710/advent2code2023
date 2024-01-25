@@ -6,7 +6,7 @@ class Day03(dayNumber: Int, loadDemoData: Boolean, postFix: String = "") : Day(d
   //<editor-fold desc="Solution Part One">
   /**
    * Berechnung der ersten Teilaufgabe
-   * @returns {Int}
+   * @returns {Long}
    * @override
    */
   override fun calcPartOne(): Long {
@@ -80,7 +80,7 @@ class Day03(dayNumber: Int, loadDemoData: Boolean, postFix: String = "") : Day(d
   //<editor-fold desc="Solution Part Tow">
   /**
    * Berechnung der zweiten Teilaufgabe
-   * @returns {Int}
+   * @returns {Long}
    * @override
    */
   override fun calcPartTwo(): Long {

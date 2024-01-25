@@ -9,7 +9,7 @@ class DayXXTest {
 
   @Test
   fun `calculate solution for demo data part one`() {
-    val expectedDemo = 0
+    val expectedDemo = 0L
     val actualDemo = demoDay.calcPartOne()
     Assertions.assertEquals(expectedDemo, actualDemo)
   }
@@ -17,21 +17,21 @@ class DayXXTest {
   @Test
   fun `calculate solution for life data part one`() {
     // Life-Data
-    val expectedLife = 0
+    val expectedLife = 0L
     val actualLife = lifeDay.calcPartOne()
     Assertions.assertEquals(expectedLife, actualLife)
   }
 
   @Test
   fun `calculate solution for demo data part two`() {
-    val expectedDemo = 0
+    val expectedDemo = 0L
     val actualDemo = demoDay.calcPartTwo()
     Assertions.assertEquals(expectedDemo, actualDemo)
   }
 
   @Test
   fun `calculate solution for life data part two`() {
-    val expectedLife = 0
+    val expectedLife = 0L
     val actualLife = lifeDay.calcPartTwo()
     Assertions.assertEquals(expectedLife, actualLife)
   }

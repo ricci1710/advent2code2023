@@ -21,22 +21,22 @@ class Day21(dayNumber: Int, loadDemoData: Boolean) : Day(dayNumber, loadDemoData
     return gardenPlan.find('S')!!
   }
 
-  private fun walkThrough(step: Int, visitedList: MutableMap<Int, MutableList<Coordinate>>): Int {
+  private fun walkThrough(step: Int, visitedList: MutableMap<Int, MutableList<Coordinate>>): Long {
     println("$step $visitedList")
-    return 0
+    return 0L
   }
 
-  fun calcPartOne(steps: Int): Int {
+  fun calcPartOne(steps: Int): Long {
     this.steps = steps
     return calcPartOne()
   }
 
   /**
    * Berechnung der ersten Teilaufgabe
-   * @returns {Int}
+   * @returns {Long}
    * @override
    */
-  override fun calcPartOne(): Int {
+  override fun calcPartOne(): Long {
     readGardenPlan()
     val startCoordinate = findStartPoint()
     val visitedList: MutableMap<Int, MutableList<Coordinate>> = mutableMapOf()
@@ -47,11 +47,11 @@ class Day21(dayNumber: Int, loadDemoData: Boolean) : Day(dayNumber, loadDemoData
 
   /**
    * Berechnung der zweiten Teilaufgabe
-   * @returns {Int}
+   * @returns {Long}
    * @override
    */
-  override fun calcPartTwo(): Int {
-    return 0
+  override fun calcPartTwo(): Long {
+    return 0L
   }
 }
 

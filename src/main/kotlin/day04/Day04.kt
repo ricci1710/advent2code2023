@@ -63,7 +63,7 @@ class Day04(dayNumber: Int, loadDemoData: Boolean) : Day(dayNumber, loadDemoData
 
   /**
    * Berechnung der ersten Teilaufgabe
-   * @returns {Int}
+   * @returns {Long}
    * @override
    */
   override fun calcPartOne(): Long {
@@ -72,7 +72,7 @@ class Day04(dayNumber: Int, loadDemoData: Boolean) : Day(dayNumber, loadDemoData
 
   /**
    * Berechnung der zweiten Teilaufgabe
-   * @returns {Int}
+   * @returns {Long}
    * @override
    */
   override fun calcPartTwo(): Long {
