@@ -70,6 +70,18 @@ class Day05(dayNumber: Int, loadDemoData: Boolean) : Day(dayNumber, loadDemoData
   }
   // endregion region file scan
 
+  private fun getMapValue(searchValue: Long, converterMap: Map<LongRange, LongRange>): Long {
+    var res = searchValue
+    for ((key, value) in converterMap) {
+      if ((key.first..key.last).contains(searchValue)) {
+        res = value.first + key.indexOf(searchValue)
+        break
+      }
+    }
+
+    return res
+  }
+
   /**
    * Berechnung der ersten Teilaufgabe
    * @returns {Long}
@@ -78,7 +90,15 @@ class Day05(dayNumber: Int, loadDemoData: Boolean) : Day(dayNumber, loadDemoData
   override fun calcPartOne(): Long {
     var result = Long.MAX_VALUE
     seeds.forEach { seed ->
-      println(seed)
+      var value = getMapValue(seed, seedToSoilMap)
+      value = getMapValue(value, soilToFertilizerMap)
+      value = getMapValue(value, fertilizerToWaterMap)
+      value = getMapValue(value, waterToLightMap)
+      value = getMapValue(value, lightToTemperatureMap)
+      value = getMapValue(value, temperatureToHumidityMap)
+      value = getMapValue(value, humidityToLocationMap)
+
+      result = result.coerceAtMost(value)
     }
     return result
   }
