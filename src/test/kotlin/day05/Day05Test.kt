@@ -25,7 +25,7 @@ class Day05Test {
 
   @Test
   fun `calculate solution for demo data part two`() {
-    val expectedDemo = 0L
+    val expectedDemo = 46L
     val demoDay = Day05(5, true)
 
     val actualDemo = demoDay.calcPartTwo()

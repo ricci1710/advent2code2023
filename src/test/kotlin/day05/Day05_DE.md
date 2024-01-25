@@ -121,3 +121,25 @@ bis Sie die entsprechende Ortsnummer finden. In diesem Beispiel sind die entspre
 Die niedrigste Ortsnummer in diesem Beispiel ist also 35.
 
 Welches ist die niedrigste Ortszahl, die einer der ursprünglichen Saatgutnummern entspricht?
+
+**--- Zweiter Teil ---**
+
+Alle werden verhungern, wenn man nur eine so geringe Anzahl von Samen pflanzt. Wenn man den Almanach noch einmal liest, sieht es so aus, als ob die Zeile "
+Saatgut:" tatsächlich Bereiche von Saatgutzahlen beschreibt.
+
+Die Werte in der ersten Saatgut: Zeile sind paarweise angeordnet. Innerhalb jedes Paares steht der erste Wert für den Beginn des Bereichs und der zweite Wert
+für die Länge des Bereichs. In der ersten Zeile des obigen Beispiels heißt es also
+
+Seeds: 79 14 55 13
+
+In dieser Zeile werden zwei Bereiche von Saatgutnummern beschrieben, die in den Garten gepflanzt werden sollen. Der erste Bereich beginnt mit der Saatgutnummer
+79 und enthält 14 Werte: 79, 80, ..., 91, 92. Der zweite Bereich beginnt mit der Saatgutnummer 55 und enthält 13 Werte: 55, 56, ..., 66, 67.
+
+Statt vier Seed-Nummern müssen Sie nun insgesamt 27 Seed-Nummern berücksichtigen.
+
+Im obigen Beispiel ergibt sich die niedrigste Standortnummer aus der Saatgutnummer 82, die der Erde 84, dem Dünger 84, dem Wasser 84, dem Licht 77, der
+Temperatur 45, der Feuchtigkeit 46 und dem Standort 46 entspricht. Die niedrigste Standortnummer ist also 46.
+
+Betrachten Sie alle ursprünglichen Saatgutnummern, die in den Bereichen in der ersten Zeile des Almanachs aufgeführt sind. Welches ist die niedrigste
+Standortnummer, die mit einer der anfänglichen Saatgutnummern übereinstimmt?
+
