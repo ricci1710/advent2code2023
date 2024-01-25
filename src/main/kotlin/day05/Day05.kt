@@ -31,7 +31,7 @@ class Day05(dayNumber: Int, loadDemoData: Boolean) : Day(dayNumber, loadDemoData
   // region file scan
   private fun readSeeds(line: String) {
     val seedLine = line.split(" ")
-    for (idx in 1..seeds.size)
+    for (idx in 1..<seedLine.size)
       seeds.add(seedLine[idx].toLong())
   }
 
@@ -53,9 +53,10 @@ class Day05(dayNumber: Int, loadDemoData: Boolean) : Day(dayNumber, loadDemoData
     storeData.forEach { line ->
       if (line.isEmpty())
         mapName = stackName.removeFirst()
+      else if (mapName == "seeds")
+        readSeeds(line)
       else if (line.indexOf(mapName) < 0) {
         when (mapName) {
-          "seeds" -> readSeeds(line)
           "seed-to-soil" -> readMapEntries(seedToSoilMap, line)
           "soil-to-fertilizer" -> readMapEntries(soilToFertilizerMap, line)
           "fertilizer-to-water" -> readMapEntries(fertilizerToWaterMap, line)
@@ -66,8 +67,6 @@ class Day05(dayNumber: Int, loadDemoData: Boolean) : Day(dayNumber, loadDemoData
         }
       }
     }
-
-    println(seedToSoilMap)
   }
   // endregion region file scan
 
