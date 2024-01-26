@@ -17,7 +17,7 @@ class Day06(dayNumber: Int, loadDemoData: Boolean) : Day(dayNumber, loadDemoData
       .toList()
       .map { it.toLong() }
 
-    if (timeLine.size !== distanceLine.size)
+    if (timeLine.size != distanceLine.size)
       throw IllegalArgumentException("timeLine.size !== distanceLine.size is not allowd")
 
     timeAndDistancePart2.time = timeLine.reduce { acc, vale -> (acc.toString() + vale.toString()).toLong() }
