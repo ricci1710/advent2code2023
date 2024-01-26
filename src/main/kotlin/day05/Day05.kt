@@ -4,13 +4,13 @@ import base.Day
 
 class Day05(dayNumber: Int, loadDemoData: Boolean) : Day(dayNumber, loadDemoData) {
   private val seeds = mutableListOf<Long>()
-  private val seedToSoilMap = mutableMapOf<LongRange, LongRange>()
-  private val soilToFertilizerMap = mutableMapOf<LongRange, LongRange>()
-  private val fertilizerToWaterMap = mutableMapOf<LongRange, LongRange>()
-  private val waterToLightMap = mutableMapOf<LongRange, LongRange>()
-  private val lightToTemperatureMap = mutableMapOf<LongRange, LongRange>()
-  private val temperatureToHumidityMap = mutableMapOf<LongRange, LongRange>()
-  private val humidityToLocationMap = mutableMapOf<LongRange, LongRange>()
+  private val seedToSoilMap = mutableMapOf<util.LongRange, util.LongRange>()
+  private val soilToFertilizerMap = mutableMapOf<util.LongRange, util.LongRange>()
+  private val fertilizerToWaterMap = mutableMapOf<util.LongRange, util.LongRange>()
+  private val waterToLightMap = mutableMapOf<util.LongRange, util.LongRange>()
+  private val lightToTemperatureMap = mutableMapOf<util.LongRange, util.LongRange>()
+  private val temperatureToHumidityMap = mutableMapOf<util.LongRange, util.LongRange>()
+  private val humidityToLocationMap = mutableMapOf<util.LongRange, util.LongRange>()
 
   private val stackName = ArrayDeque(
     listOf(
@@ -38,12 +38,12 @@ class Day05(dayNumber: Int, loadDemoData: Boolean) : Day(dayNumber, loadDemoData
   /**
    * Each line within a map contains three numbers: the destination range start, the source range start, and the range length.
    */
-  private fun readMapEntries(rangeMap: MutableMap<LongRange, LongRange>, line: String) {
+  private fun readMapEntries(rangeMap: MutableMap<util.LongRange, util.LongRange>, line: String) {
     val rangeInfos = line.split(" ").map { it.toLong() }
 
     val rangeDistance = rangeInfos[2]
-    val sourceRange = LongRange(rangeInfos[1], rangeInfos[1] + rangeDistance - 1)
-    val targetRange = LongRange(rangeInfos[0], rangeInfos[0] + rangeDistance - 1)
+    val sourceRange = util.LongRange(rangeInfos[1], rangeInfos[1] + rangeDistance - 1)
+    val targetRange = util.LongRange(rangeInfos[0], rangeInfos[0] + rangeDistance - 1)
 
     rangeMap[sourceRange] = targetRange
   }
@@ -70,7 +70,7 @@ class Day05(dayNumber: Int, loadDemoData: Boolean) : Day(dayNumber, loadDemoData
   }
   // endregion region file scan
 
-  private fun getMapValue(searchValue: Long, converterMap: Map<LongRange, LongRange>): Long {
+  private fun getMapValue(searchValue: Long, converterMap: Map<util.LongRange, util.LongRange>): Long {
     var res = searchValue
     for ((key, value) in converterMap) {
       if ((key.first..key.last).contains(searchValue)) {
@@ -111,10 +111,10 @@ class Day05(dayNumber: Int, loadDemoData: Boolean) : Day(dayNumber, loadDemoData
   override fun calcPartTwo(): Long {
     var result = Long.MAX_VALUE
 
-    val seedRange = mutableListOf<LongRange>()
+    val seedRange = mutableListOf<util.LongRange>()
     for (idx in 0..<seeds.size step 2) {
       val seed = seeds[idx]
-      seedRange.add(LongRange(seed, seed + seeds[idx + 1] - 1))
+      seedRange.add(util.LongRange(seed, seed + seeds[idx + 1] - 1))
     }
 
     seedRange.forEach { seedRangeItem ->
