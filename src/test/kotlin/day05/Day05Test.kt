@@ -34,7 +34,7 @@ class Day05Test {
 
   @Test
   fun `calculate solution for life data part two`() {
-    val expectedLife = 0L
+    val expectedLife = 23738616L
     val lifeDay = Day05(5, false)
 
     val actualLife = lifeDay.calcPartTwo()
