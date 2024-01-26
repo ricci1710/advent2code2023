@@ -109,6 +109,28 @@ class Day05(dayNumber: Int, loadDemoData: Boolean) : Day(dayNumber, loadDemoData
    * @override
    */
   override fun calcPartTwo(): Long {
-    return 0L
+    var result = Long.MAX_VALUE
+
+    val seedRange = mutableListOf<LongRange>()
+    for (idx in 0..<seeds.size step 2) {
+      val seed = seeds[idx]
+      seedRange.add(LongRange(seed, seed + seeds[idx + 1] - 1))
+    }
+
+    seedRange.forEach { seedRangeItem ->
+      for (idx in seedRangeItem.first..seedRangeItem.last) {
+        var value = getMapValue(idx, seedToSoilMap)
+        value = getMapValue(value, soilToFertilizerMap)
+        value = getMapValue(value, fertilizerToWaterMap)
+        value = getMapValue(value, waterToLightMap)
+        value = getMapValue(value, lightToTemperatureMap)
+        value = getMapValue(value, temperatureToHumidityMap)
+        value = getMapValue(value, humidityToLocationMap)
+
+        result = result.coerceAtMost(value)
+      }
+    }
+
+    return result
   }
 }
