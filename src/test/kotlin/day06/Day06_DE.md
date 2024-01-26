@@ -1,4 +1,5 @@
---- Tag 6: Warten Sie auf ihn ---
+**--- Tag 6: Warten Sie auf ihn ---**
+
 Die Fähre bringt dich schnell über die Insel Island. Nachdem du dich umgehört hast, entdeckst du, dass es in der Tat normalerweise irgendwo in der Nähe einen
 großen Sandhaufen gibt, aber du siehst nichts außer viel Wasser und der kleinen Insel, an der die Fähre angedockt hat.
 
@@ -63,3 +64,25 @@ Beispiel diese Werte miteinander multiplizieren, erhalten Sie 288 (4 * 8 * 9).
 
 Bestimmen Sie die Anzahl der Möglichkeiten, wie Sie den Rekord in jedem Rennen schlagen können. Was erhältst du, wenn du diese Zahlen miteinander
 multiplizierst?
+
+**--- Teil zwei ---**
+
+Als das Rennen kurz vor dem Start steht, stellst du fest, dass der Zettel mit den Zeiten und Entfernungen, den du vorhin bekommen hast, einfach nur sehr
+schlecht unterstrichen ist. Es gibt wirklich nur ein Rennen - ignorieren Sie die Abstände zwischen den Zahlen in jeder Zeile.
+
+Also, das Beispiel von vorhin:
+
+```
+Zeit: 7 15 30
+Entfernung: 9 40 200
+```
+
+...bedeutet jetzt stattdessen dies:
+
+Zeit: 71530
+Entfernung: 940200
+Nun müssen Sie herausfinden, wie viele Möglichkeiten es gibt, dieses einzelne Rennen zu gewinnen. In diesem Beispiel dauert das Rennen 71530 Millisekunden und
+die Rekorddistanz, die Sie schlagen müssen, beträgt 940200 Millimeter. Du könntest die Taste zwischen 14 und 71516 Millisekunden lang gedrückt halten und den
+Rekord brechen, also insgesamt 71503 Möglichkeiten!
+
+Wie viele Möglichkeiten gibt es, den Rekord in diesem einen viel längeren Rennen zu schlagen?
