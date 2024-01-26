@@ -4,26 +4,28 @@ import base.Day
 
 class Day06(dayNumber: Int, loadDemoData: Boolean) : Day(dayNumber, loadDemoData) {
   private val gameList = mutableListOf<TimeAndDistance>()
+  private val timeAndDistancePart2 = TimeAndDistance(0, 0)
 
   init {
     val timeLine = Regex("[0-9]+").findAll(storeData[0])
       .map(MatchResult::value)
       .toList()
-      .map { it.toInt() }
+      .map { it.toLong() }
 
     val distanceLine = Regex("[0-9]+").findAll(storeData[1])
       .map(MatchResult::value)
       .toList()
-      .map { it.toInt() }
+      .map { it.toLong() }
 
     if (timeLine.size !== distanceLine.size)
       throw IllegalArgumentException("timeLine.size !== distanceLine.size is not allowd")
 
+    timeAndDistancePart2.time = timeLine.reduce { acc, vale -> (acc.toString() + vale.toString()).toLong() }
+    timeAndDistancePart2.distance = distanceLine.reduce { acc, vale -> (acc.toString() + vale.toString()).toLong() }
+
     for (idx in timeLine.indices) {
       gameList.add(TimeAndDistance(timeLine[idx], distanceLine[idx]))
     }
-
-    println(gameList)
   }
 
   /**
@@ -37,7 +39,7 @@ class Day06(dayNumber: Int, loadDemoData: Boolean) : Day(dayNumber, loadDemoData
       var times = 0
       for (idx in 1..timeAndDistance.time) {
         val distance = idx * (timeAndDistance.time - idx)
-        if (distance >= timeAndDistance.distance)
+        if (distance > timeAndDistance.distance)
           times += 1
       }
       result *= times
@@ -51,8 +53,15 @@ class Day06(dayNumber: Int, loadDemoData: Boolean) : Day(dayNumber, loadDemoData
    * @override
    */
   override fun calcPartTwo(): Long {
-    return 0L
+    var result = 0L
+
+    for (idx in 1..timeAndDistancePart2.time) {
+      val distance = idx * (timeAndDistancePart2.time - idx)
+      if (distance > timeAndDistancePart2.distance)
+        result += 1
+    }
+    return result
   }
 }
 
-data class TimeAndDistance(var time: Int, var distance: Int)
+data class TimeAndDistance(var time: Long, var distance: Long)
