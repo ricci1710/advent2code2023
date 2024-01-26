@@ -143,3 +143,15 @@ Temperatur 45, der Feuchtigkeit 46 und dem Standort 46 entspricht. Die niedrigst
 Betrachten Sie alle ursprünglichen Saatgutnummern, die in den Bereichen in der ersten Zeile des Almanachs aufgeführt sind. Welches ist die niedrigste
 Standortnummer, die mit einer der anfänglichen Saatgutnummern übereinstimmt?
 
+Optinierung:
+
+Eingang: [5-10]  => wäre 5,6,7,8,9,10
+Mapper:
+[1-3]   => entfällt
+[4-7]   => [5-7]
+8 => 8
+[9-12]  => [9-10]
+
+=> Eingang: [5-7], 8, [9-10]
+
+
